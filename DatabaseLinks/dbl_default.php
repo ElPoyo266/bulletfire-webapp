@@ -12,7 +12,7 @@
 	You must start by declare your database as global then execute your query
 	and don't forget to require_once your entities if you need them
 	*/
-    function getUserById ($userId) {
+    function getUserByNickname ($nickname) {
 		global $db;
 		$q = $db->prepare("SELECT * FROM user WHERE ID_User = ?");
 		$q->execute([$userId]);
@@ -25,25 +25,27 @@
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
 		global $db;
-		try {
+		$verif=false;
+		$q = $db->prepare('SELECT nickname
+                         		FROM Player');
+	 	$q->execute();
+	 	while ($data = $q->fetch())
+		{
+		    if ($data === $nickname) {
+		    	$verif = true;
+		    	return 'Erreur : pseudo déjà utilisé';
+		    }
+		}
+		if ($verif === false) {
+			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
 			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
-		}
-		catch(PDOException $e)
-		{
-			$erreur = $e->getMessage();
 		}
 	}
 
 	function newsletterSub ($mail) {
 		global $db;
-		try {
-			$q = $db->prepare("INSERT INTO Newsletter(mail) VALUES (?)");
-			$q->execute([htmlspecialchars($mail)]);
-		}
-		catch(PDOException $e)
-		{
-			$erreur = $e->getMessage();
-		}
+		$q = $db->prepare("INSERT INTO Newsletter(mail) VALUES (?)");
+		$q->execute([htmlspecialchars($mail)]);
 	}
 ?> 

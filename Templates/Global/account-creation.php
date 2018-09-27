@@ -32,6 +32,5 @@
                 <input type="submit" value="Créer un compte">
             </form>
 
-			
 		</body>
 	</html>
