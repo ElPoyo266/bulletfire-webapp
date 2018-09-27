@@ -6,7 +6,7 @@
 	*/
 
 	// Home
-	$routes->add("/", "Default:accountCreation");
+	$routes->add("/", "Default:home");
 	$routes->add("/accountcreation", "Default:accountCreation");
 
 	// Blog
