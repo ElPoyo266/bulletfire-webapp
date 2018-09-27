@@ -1,7 +1,7 @@
 <?php 
 	
 	// User Entity (for connection)
-	require "Classes/Entities/user.php";
+	require "Classes/Entities/player.php";
 	// End
 
 	session_start();

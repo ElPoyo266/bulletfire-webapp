@@ -25,13 +25,25 @@
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
 		global $db;
-		$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
-		$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
+		try {
+			$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
+			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
+		}
+		catch(PDOException $e)
+		{
+			$erreur = $e->getMessage();
+		}
 	}
 
 	function newsletterSub ($mail) {
 		global $db;
-		$q = $db->prepare("INSERT INTO Newsletter(mail) VALUES (?)");
-		$q->execute([htmlspecialchars($mail)]);
+		try {
+			$q = $db->prepare("INSERT INTO Newsletter(mail) VALUES (?)");
+			$q->execute([htmlspecialchars($mail)]);
+		}
+		catch(PDOException $e)
+		{
+			$erreur = $e->getMessage();
+		}
 	}
 ?> 
