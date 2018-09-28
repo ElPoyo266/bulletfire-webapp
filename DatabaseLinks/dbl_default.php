@@ -27,7 +27,6 @@
 		global $db;
 		$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
 		$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
-		}
 	}
 
 	function newsletterSub ($mail) {
