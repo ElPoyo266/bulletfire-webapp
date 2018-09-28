@@ -33,7 +33,7 @@
 				(($_POST['mail']) === ($_POST['mail1']))) 
 				{
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
-					$error = insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], $_POST['pwd']);
+					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], $_POST['pwd']);
 					if (isset($error)) {
 						echo '<p>'.$error.'<p>';
 					}

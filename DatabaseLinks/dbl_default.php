@@ -25,21 +25,8 @@
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
 		global $db;
-		$verif=false;
-		$q = $db->prepare('SELECT nickname
-                         		FROM Player');
-	 	$q->execute();
-	 	while ($data = $q->fetch())
-		{
-		    if ($data === $nickname) {
-		    	$verif = true;
-		    	return 'Erreur : pseudo déjà utilisé';
-		    }
-		}
-		if ($verif === false) {
-			$q->closeCursor();
-			$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
-			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
+		$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
+		$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
 		}
 	}
 
