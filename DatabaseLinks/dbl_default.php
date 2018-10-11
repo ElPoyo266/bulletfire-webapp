@@ -25,7 +25,6 @@
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
 		global $db;
-<<<<<<< HEAD
 		$verif=false;
 		$q = $db->prepare('SELECT nickname
                          		FROM Player');
@@ -40,12 +39,8 @@
 		if ($verif === false) {
 			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Player(nickname, surname, name, mail, pwd) VALUES (?, ?, ?, ?, ?)");
-			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),hash('sha256',htmlspecialchars($pwd))]);
+			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
 		}
-=======
-		$q = $db->prepare("INSERT INTO Player(nickname, surname, `name`, mail, pwd) VALUES (?, ?, ?, ?, ?)");
-		$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),htmlspecialchars($pwd)]);
->>>>>>> 8f5cf2fba39f9c7ef1cdca8b4532d873af5d4276
 	}
 
 	function newsletterSub ($mail) {
