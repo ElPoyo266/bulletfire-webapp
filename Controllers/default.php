@@ -33,9 +33,11 @@
 				(($_POST['mail']) === ($_POST['mail1']))) 
 				{
 					echo $_POST["pwd"];
-					echo hash('sha256', $_POST["pwd"]);
+					$hash = hash('sha256', $_POST["pwd"]);
+					echo $hash;
+					
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
-					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], hash('sha256',$_POST['pwd']));
+					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], $hash);
 					if (isset($error)) {
 						echo '<p>'.$error.'<p>';
 					}
