@@ -25,7 +25,6 @@
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
 		global $db;
-		echo "<br>" . $pwd;
 		$verif=false;
 		$q = $db->prepare('SELECT nickname
                          		FROM Player');
@@ -40,7 +39,6 @@
 		if ($verif === false) {
 			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Player(nickname, surname, name, mail, pwd) VALUES (?, ?, ?, ?, ?)");
-			echo "<br>" . $pwd;
 			$q->execute([htmlspecialchars($nickname),htmlspecialchars($surname),htmlspecialchars($name),htmlspecialchars($mail),$pwd]);
 		}
 	}
