@@ -34,7 +34,7 @@
 				{
 					echo $_POST["pwd"];
 					$hash = hash('sha256', $_POST["pwd"]);
-					echo $hash;
+					echo "<br>" . $hash;
 					
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
 					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], $hash);
