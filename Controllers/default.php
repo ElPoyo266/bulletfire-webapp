@@ -32,6 +32,8 @@
 				if ((($_POST['pwd']) === ($_POST['pwd1'])) and
 				(($_POST['mail']) === ($_POST['mail1']))) 
 				{
+					echo $_POST["pwd"];
+					echo hash('sha256', $_POST["pwd"]);
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
 					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], hash('sha256',$_POST['pwd']));
 					if (isset($error)) {
