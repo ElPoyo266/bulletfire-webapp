@@ -48,4 +48,18 @@
 		$q = $db->prepare("INSERT INTO Newsletter(mail) VALUES (?)");
 		$q->execute([htmlspecialchars($mail)]);
 	}
+
+	function selectTicket(){
+		global $db;
+		$req = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
+								FROM billets 
+								ORDER BY date_creation DESC');
+	}
+
+	function selectComment($id_billet){
+		$req = $db->prepare('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, DATE_FORMAT					(date_creation, \'%Hh%imin%ss\') AS heure_billet FROM billets WHERE id = ?');
+			$data = $req1->execute(array($_GET['id']));
+			$data = $req1->fetch();
+	}
 ?> 

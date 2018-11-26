@@ -60,6 +60,31 @@
 			$view = new Template("Global:account-creation");
 			return $view->showTime();
 		}
+
+	public fucntion recupPost(){
+		if(isset($_GET['id']))
+		{
+			selectPost();
+		}
+		if(isset($error))
+		{
+			echo '<p>'.$error.'</p>';
+		}
+
+	}
+	public function topic(){
+		//Est-ce que tous les champs sont remplis ?
+			if (isset($_POST['titre']) and isset($_POST['contenu']))
+			{
+				insertNewPlayer ($_POST['titre'], $_POST['contenu'], //date à insérer);
+					if (isset($error)) {
+						echo '<p>'.$error.'<p>';
+					}	
+			}
+
+
+
+	}
 	}
 
 ?>
