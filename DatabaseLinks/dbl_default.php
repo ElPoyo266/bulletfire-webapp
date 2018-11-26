@@ -49,17 +49,51 @@
 		$q->execute([htmlspecialchars($mail)]);
 	}
 
+	function insertNewTicket($titre, $contenu){
+		global $db;
+		$verif=false;
+		$q = $db->prepare('SELECT titre
+                         		FROM Billet');
+	 	$q->execute();
+	 	while ($data = $q->fetch())
+		{
+		    if ($data === $titre) {
+		    	$verif = true;
+		    	return 'Erreur : titre déjà existant';
+		    }
+		}
+		if ($verif === false) {
+			$q->closeCursor();
+			$q = $db->prepare("INSERT INTO Billet(nickname, titre, contenu) VALUES (?, ?, ?)");
+			$q->execute([$nickname, htmlspecialchars($titre),htmlspecialchars($contenu)]);
+		}
+
+	}
 	function selectTicket(){
 		global $db;
-		$req = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+		$q = $db->query('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
 								FROM billets 
 								ORDER BY date_creation DESC');
+		$q->closeCursor();
 	}
 
-	function selectComment($id_billet){
-		$req = $db->prepare('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, DATE_FORMAT					(date_creation, \'%Hh%imin%ss\') AS heure_billet FROM billets WHERE id = ?');
+	function insertNewComment($titre, $contenu){
+		global $db;
+			
+			$q = $db->prepare("INSERT INTO Billet(id_billet, nickname, contenu) VALUES (?, ?, ?)");
+			$q->execute([$nickname,htmlspecialchars($contenu)]);
+			$q->closeCursor();
+		}
+
+	}
+
+	function selectComment($id){
+		$q = $db->prepare('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, DATE_FORMAT					(date_creation, \'%Hh%imin%ss\') AS heure_billet FROM billets WHERE id = ?');
 			$data = $req1->execute(array($_GET['id']));
 			$data = $req1->fetch();
 	}
+    
+	function 
+
 ?> 

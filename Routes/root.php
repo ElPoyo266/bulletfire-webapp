@@ -8,7 +8,7 @@
 	// Home
 	$routes->add("/", "Default:home");
 	$routes->add("/account-creation", "Default:accountCreation");
-	$routes->add("/ticket-creation", "Default:topicCreation");
+	$routes->add("/ticket-creation", "Default:ticketCreation");
 	$routes->add("/comment-creation", "Default:commentCreation");
 
 	// Blog

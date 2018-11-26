@@ -76,7 +76,7 @@
 		//Est-ce que tous les champs sont remplis ?
 			if (isset($_POST['titre']) and isset($_POST['contenu']))
 			{
-				insertNewPlayer ($_POST['titre'], $_POST['contenu'], //date à insérer);
+				insertNewTicket ($_POST['titre'], $_POST['contenu']);
 					if (isset($error)) {
 						echo '<p>'.$error.'<p>';
 					}	
