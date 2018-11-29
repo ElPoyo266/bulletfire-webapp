@@ -61,7 +61,7 @@
 			return $view->showTime();
 		}
 
-	public fucntion recupPost(){
+	public function recupPost(){
 		if(isset($_GET['id']))
 		{
 			selectPost();
