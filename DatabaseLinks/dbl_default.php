@@ -84,7 +84,6 @@
 			$q = $db->prepare("INSERT INTO Billet(id_billet, nickname, contenu) VALUES (?, ?, ?)");
 			$q->execute([$nickname,htmlspecialchars($contenu)]);
 			$q->closeCursor();
-		}
 
 	}
 
@@ -94,6 +93,5 @@
 			$data = $req1->fetch();
 	}
     
-	function 
 
 ?> 
