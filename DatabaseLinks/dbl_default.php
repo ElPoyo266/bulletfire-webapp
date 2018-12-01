@@ -71,11 +71,20 @@
 	}
 	function selectTicket(){
 		global $db;
-		$q = $db->query('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+		$recup = array();
+		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
 								FROM billets 
 								ORDER BY date_creation DESC');
+		while($data = $q->fetch()){
+			$recup[] = array("id"=>$data['id'] , 
+					"titre"=>$data['titre'], 
+					"contenu"=>$data['contenu'], 
+					"dateBillet"=>$data['date_billet'], 
+					"heureBillet"=>$data['heure_billet']);
+		}
 		$q->closeCursor();
+		return $recup;
 	}
 
 	function insertNewComment($titre, $contenu){
@@ -88,9 +97,17 @@
 	}
 
 	function selectComment($id){
-		$q = $db->prepare('SELECT titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, DATE_FORMAT					(date_creation, \'%Hh%imin%ss\') AS heure_billet FROM billets WHERE id = ?');
-			$data = $req1->execute(array($_GET['id']));
-			$data = $req1->fetch();
+		$com = array();
+		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y\') AS date_commentaire, 					DATE_FORMAT(date_commentaire, \'%Hh%imin%ss\') AS heure_commentaire FROM Commentaires WHERE id = ?');
+			$data = $q->execute(array($_GET['id']));
+			while($data = $q->fetch()){
+			$com[] = array("titre"=>$data['titre'], 
+					"contenu"=>$data['contenu'], 
+					"dateBillet"=>$data['date_billet'], 
+					"heureBillet"=>$data['heure_billet']);
+		}
+		$q->closeCursor();
+		return $com;
 	}
     
 

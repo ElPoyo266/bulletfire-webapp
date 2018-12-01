@@ -61,10 +61,13 @@
 			return $view->showTime();
 		}
 
-	public function recupPost(){
+	public function recupTicket(){
+		$envoi = array();
 		if(isset($_GET['id']))
 		{
-			selectPost();
+			$envoi = selectTicket();
+			$view = new Template("Global:ticket-view", array('ticket'=> $envoi));
+			return $view->showTime();
 		}
 		if(isset($error))
 		{
@@ -72,19 +75,38 @@
 		}
 
 	}
-	public function topic(){
+	public function ticketCreation(){
 		//Est-ce que tous les champs sont remplis ?
 			if (isset($_POST['titre']) and isset($_POST['contenu']))
 			{
-				insertNewTicket ($_POST['titre'], $_POST['contenu']);
+				insertNewTicket($_POST['titre'], $_POST['contenu']);
 					if (isset($error)) {
 						echo '<p>'.$error.'<p>';
-					}	
+					}
+					else{
+						echo 'Votre sujet a été inséré avec succès.';
+					}
 			}
+			$view = new Template("Global:ticket-creation");
+			return $view->showTime();
+	}
 
-
+	public function recupComment(){
+		$envoi = array();
+		if(isset($_GET['id']))
+		{	
+			$envoi = selectComment($_GET['id']);
+			$view = new Template("Global:comment-view", array('comment'=> $envoi));
+			return $view->showTime();
+		}
+		if(isset($error))
+		{
+			echo '<p>'.$error.'</p>';
+		}
 
 	}
+
+
 	}
 
 ?>

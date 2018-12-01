@@ -10,7 +10,6 @@
 		</head>
 		
 		<body>
-
 			<h1><?= ' '/*$translate->translate('Ticket creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Contenu</label>
