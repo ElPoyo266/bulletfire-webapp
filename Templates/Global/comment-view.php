@@ -31,7 +31,8 @@
 			<h1><?= ' '/*$translate->translate('Comment creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Contenu</label>
-                <input type="text" name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"  title="Ce champs est                                 obligatoire."required><br>
+                <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>
+				<br>
                 <input type="submit" value="Envoyer">
             </form>
 
