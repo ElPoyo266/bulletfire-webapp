@@ -12,7 +12,7 @@
 		<body>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
                 <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
-
+				// sujet a recup
 				<div class="comment">
 				<h3>
 				<?php
