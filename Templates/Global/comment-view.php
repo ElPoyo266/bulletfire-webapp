@@ -8,7 +8,7 @@
 			<link rel="stylesheet" type="text/css" href="<?= ASSET . 'Styles/home.css' ?>">
 
 		</head>
-		
+		 
 		<body>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
                 <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
