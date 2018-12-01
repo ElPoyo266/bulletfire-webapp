@@ -59,7 +59,7 @@
 		{
 		    if ($data === $titre) {
 		    	$verif = true;
-		    	return 'Erreur : titre déjà existant';
+		    	return 'Erreur : Titre déjà existant. Merci de consulter les sujets.';
 		    }
 		}
 		if ($verif === false) {

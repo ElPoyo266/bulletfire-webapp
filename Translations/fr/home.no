@@ -1,2 +1,5 @@
 Get started : Commencer
 Account creation : Création du compte
+Ticket creation : Création du sujet
+Topic : Forum
+Topic creation : Creation du sujet

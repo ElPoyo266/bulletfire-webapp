@@ -10,7 +10,7 @@
 		</head>
 		
 		<body>
-            <h1><?= ' '/*$translate->translate('Topic Name');*/ ?></h1>
+            <h1><?= ' '/*$translate->translate('Topic categorie');*/ ?></h1>
                 <h2><a><?= ' '/*$translate->translate('Topic Theme');*/ ?></a></h2>
                 
                 //topic à afficher selon css
