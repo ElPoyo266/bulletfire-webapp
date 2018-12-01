@@ -102,9 +102,10 @@
 			$data = $q->execute(array($_GET['id']));
 			while($data = $q->fetch()){
 			$com[] = array("titre"=>$data['titre'], 
-					"contenu"=>$data['contenu'], 
-					"dateBillet"=>$data['date_billet'], 
-					"heureBillet"=>$data['heure_billet']);
+					"auteur"=>$data['auteur'], 
+					"commentaire"=>$data['commentaire'], 
+					"dateCom"=>$data['date_commentaire'],
+					"heureCom"=>$data['heure_commentaire']);
 		}
 		$q->closeCursor();
 		return $com;
