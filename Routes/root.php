@@ -9,9 +9,10 @@
 	$routes->add("/", "Default:home");
 	$routes->add("/account-creation", "Default:accountCreation");
 	$routes->add("/ticket-creation", "Default:ticketCreation");
-	$routes->add("/comment-creation", "Default:commentCreation");
-	$routes->add("/recup-ticket", "Default:recupTicket");
-	$routes->add("/recup-comment", "Default:recupComment");
+	$routes->add("/ticket-view", "Default:recupTicket");
+	$routes->add("/comment-view", "Default:commentCreation");
+	$routes->add("/comment-view", "Default:recupComment");
+	$route->add("/comment-view", "Default:recupTicketById")
 
 	// Blog
 	/*
