@@ -12,17 +12,18 @@
 		<body>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
                 <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
-				// sujet a recup
+					
 				<div class="comment">
 				<h3>
 				<?php
 					foreach($param['comment'] as $comment){
-						echo' le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire']; 						
+						echo' le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'];
+					} 						
 				?>
 				</h3>
 				<p>
 				<?php
-				echo htmlspecialchars($comment['commentaire']);
+					echo htmlspecialchars($comment['commentaire']);
 				?>
 				<br />
 				</p>
