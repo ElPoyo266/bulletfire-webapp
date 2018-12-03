@@ -10,6 +10,8 @@
 	$routes->add("/account-creation", "Default:accountCreation");
 	$routes->add("/ticket-creation", "Default:ticketCreation");
 	$routes->add("/comment-creation", "Default:commentCreation");
+	$routes->add("/recup-ticket", "Default:recupTicket");
+	$routes->add("/recup-comment", "Default:recupComment");
 
 	// Blog
 	/*
