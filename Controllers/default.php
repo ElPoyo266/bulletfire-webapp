@@ -61,6 +61,22 @@
 			return $view->showTime();
 		}
 
+	public function ticketCreation(){
+	//Est-ce que tous les champs sont remplis ?
+		if (isset($_POST['titre']) and isset($_POST['contenu']))
+		{
+			insertNewTicket($_POST['titre'], $_POST['contenu']);
+				if (isset($error)) {
+					echo '<p>'.$error.'<p>';
+				}
+				else{
+					echo 'Votre sujet a été inséré avec succès.';
+				}
+		}
+		$view = new Template("Global:ticket-creation");
+		return $view->showTime();
+	}	
+
 	public function recupTicket(){
 		$envoi = array();
 		if(isset($_GET['id']))
@@ -75,20 +91,20 @@
 		}
 
 	}
-	public function ticketCreation(){
-		//Est-ce que tous les champs sont remplis ?
-			if (isset($_POST['titre']) and isset($_POST['contenu']))
-			{
-				insertNewTicket($_POST['titre'], $_POST['contenu']);
-					if (isset($error)) {
-						echo '<p>'.$error.'<p>';
-					}
-					else{
-						echo 'Votre sujet a été inséré avec succès.';
-					}
-			}
-			$view = new Template("Global:ticket-creation");
+
+	public function recupTicketById(){
+		$envoi = array();
+		if(isset($_GET['id']))
+		{
+			$envoi = selectTicketbyId($_GET['id']);
+			$view = new Template("Global:comment-view", array('ticket'=> $envoi));
 			return $view->showTime();
+		}
+		if(isset($error))
+		{
+			echo '<p>'.$error.'</p>';
+		}
+
 	}
 
 	public function recupComment(){

@@ -13,7 +13,7 @@
 			<h1><?= ' '/*$translate->translate('Ticket creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Contenu</label>
-                <textarea name="surname" id="surname" placeholder="Entrer votre post"></textarea>
+                <textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
 				<br>
                 <input type="submit" value="Valider">
             </form>

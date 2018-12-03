@@ -87,6 +87,23 @@
 		return $recup;
 	}
 
+	function selectTicketById($id){
+		global $db;
+		$recup = array();
+		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
+								FROM billets
+								WHERE id = ? 
+								ORDER BY date_creation DESC');
+
+		$q->execute(htmlspecialchars($id));
+		$q->fetch();
+		$recup[] = array("titre"=>$data['titre'], 
+			"contenu"=>$data['contenu'], 
+			"dateBillet"=>$data['date_billet'], 
+			"heureBillet"=>$data['heure_billet']);
+	}
+
 	function insertNewComment($titre, $contenu){
 		global $db;
 			

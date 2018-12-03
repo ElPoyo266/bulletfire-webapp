@@ -12,15 +12,25 @@
 		<body>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
                 <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
-					
+				<div class="ticket">
+				<?php
+					echo'<h3>' . $param['titre'] . '</h3>';
+					echo'<p> le ' . $param['date_billet'] . ' à ' . $param['heure_billet'] . '</p>';
+				?>
+				<p>
+				<?php
+					echo htmlspecialchars($param['contenu']);
+				?>
+				</p>
+				</div>
 				<div class="comment">
-				<h3>
+				<h4>
 				<?php
 					foreach($param['comment'] as $comment){
-						echo' le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'];
+						echo'<p> le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'] . '</p>';
 					} 						
 				?>
-				</h3>
+				</h4>
 				<p>
 				<?php
 					echo htmlspecialchars($comment['commentaire']);
