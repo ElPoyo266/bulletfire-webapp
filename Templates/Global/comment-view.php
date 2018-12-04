@@ -42,6 +42,7 @@
 			<h1><?= ' '/*$translate->translate('Comment creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Contenu</label>
+				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
                 <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>
 				<br>
                 <input type="submit" value="Envoyer">

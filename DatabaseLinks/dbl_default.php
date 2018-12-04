@@ -49,7 +49,7 @@
 		$q->execute([htmlspecialchars($mail)]);
 	}
 
-	function insertNewTicket($titre, $contenu){
+	function insertNewTicket($nickname, $titre, $contenu){
 		global $db;
 		$verif=false;
 		$q = $db->prepare('SELECT titre FROM Billet');
@@ -64,7 +64,7 @@
 		if ($verif === false) {
 			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Billet(nickname, titre, contenu) VALUES (?, ?, ?)");
-			$q->execute(["toto", htmlspecialchars($titre),htmlspecialchars($contenu)]);
+			$q->execute([htmlspecialchars($nickname), htmlspecialchars($titre),htmlspecialchars($contenu)]);
 		}
 
 	}
@@ -89,7 +89,7 @@
 	function selectTicketById($id){
 		global $db;
 		$recup = array();
-		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+		$q = $db->query('SELECT id, titre, nickname, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
 								FROM Billet
 								WHERE id = ? 
@@ -105,9 +105,8 @@
 
 	function insertNewComment($titre, $contenu){
 		global $db;
-			
-			$q = $db->prepare("INSERT INTO Billet(id_billet, nickname, contenu) VALUES (?, ?, ?)");
-			$q->execute([$nickname,htmlspecialchars($contenu)]);
+			$q = $db->prepare("INSERT INTO Billet(nickname, contenu) VALUES (?, ?)");
+			$q->execute([htmlspecialchars($nickname),htmlspecialchars($contenu)]);
 			$q->closeCursor();
 
 	}
