@@ -68,7 +68,7 @@
 	public function ticketCreation(){
 	//Est-ce que tous les champs sont remplis ?
 		$taberror = array();
-		if (isset($_POST['auteur'] and isset($_POST['titre']) and isset($_POST['contenu'])))
+		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
 			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu']);
 				if (isset($error)) {
