@@ -77,7 +77,7 @@
 								ORDER BY date_creation DESC');
 		while($data = $q->fetch()){
 			$recup[] = array("id"=>$data['id'] ,
-					"auteur"=>$data['auteur'] 
+					"auteur"=>$data['auteur'], 
 					"titre"=>$data['titre'], 
 					"contenu"=>$data['contenu'], 
 					"dateBillet"=>$data['date_billet'], 
