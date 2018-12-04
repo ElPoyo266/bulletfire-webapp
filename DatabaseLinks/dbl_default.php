@@ -74,7 +74,7 @@
 		$recup = array();
 		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
-								FROM billets 
+								FROM Billet
 								ORDER BY date_creation DESC');
 		while($data = $q->fetch()){
 			$recup[] = array("id"=>$data['id'] , 
@@ -92,7 +92,7 @@
 		$recup = array();
 		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
-								FROM billets
+								FROM Billet
 								WHERE id = ? 
 								ORDER BY date_creation DESC');
 
