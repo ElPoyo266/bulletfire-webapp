@@ -10,9 +10,7 @@
 	$routes->add("/account-creation", "Default:accountCreation");
 	$routes->add("/ticket-creation", "Default:ticketCreation");
 	$routes->add("/ticket-view", "Default:recupTicket");
-	$routes->add("/comment-view", "Default:commentCreation");
-	$routes->add("/comment-view", "Default:recupComment");
-	$routes->add("/comment-view", "Default:recupTicketById");
+	$routes->add("/comment-view", "Default:CommentPost");
 
 	// Blog
 	/*

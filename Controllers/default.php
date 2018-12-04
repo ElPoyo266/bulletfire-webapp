@@ -92,27 +92,16 @@
 
 	}
 
-	public function recupTicketById(){
-		$envoi = array();
+
+
+	public function CommentPost(){
+		$ticket = array();
+		$comment = array();
 		if(isset($_GET['id']))
 		{
-			$envoi = selectTicketbyId($_GET['id']);
-			$view = new Template("Global:comment-view", array('ticket'=> $envoi));
-			return $view->showTime();
-		}
-		if(isset($error))
-		{
-			echo '<p>'.$error.'</p>';
-		}
-
-	}
-
-	public function recupComment(){
-		$envoi = array();
-		if(isset($_GET['id']))
-		{	
-			$envoi = selectComment($_GET['id']);
-			$view = new Template("Global:comment-view", array('comment'=> $envoi));
+			$ticket = selectTicketbyId($_GET['id']);
+			$comment = selectComment($_GET['id']);
+			$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment));
 			return $view->showTime();
 		}
 		if(isset($error))

@@ -14,8 +14,8 @@
                 <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
 				<div class="ticket">
 				<?php
-					echo'<h3>' . $param['titre'] . '</h3>';
-					echo'<p> le ' . $param['date_billet'] . ' à ' . $param['heure_billet'] . '</p>';
+					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
+					echo'<p> le ' . $param['ticket']['date_billet'] . ' à ' . $param['ticket']['heure_billet'] . '</p>';
 				?>
 				<p>
 				<?php
