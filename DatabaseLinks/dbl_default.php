@@ -63,8 +63,8 @@
 		}
 		if ($verif === false) {
 			$q->closeCursor();
-			$q = $db->prepare("INSERT INTO Billet(nickname, titre, contenu) VALUES (?, ?, ?)");
-			$q->execute([htmlspecialchars($nickname), htmlspecialchars($titre),htmlspecialchars($contenu)]);
+			$q = $db->prepare("INSERT INTO Billet(auteur, titre, contenu) VALUES (?, ?, ?)");
+			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu)]);
 		}
 
 	}
