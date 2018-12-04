@@ -16,7 +16,7 @@
 				<a href="comment-view.php?id=<?=$ticket['id']?>"><h3>
 					<?php
                     
-                    foreach($param['tickets'] as $ticket){
+                    foreach($param['ticket'] as $ticket){
                         echo htmlspecialchars($ticket['titre']) . ' le ' . $ticket['date_billet'] . ' à ' . $ticket['heure_billet'];
                 	?>
                 	<?php

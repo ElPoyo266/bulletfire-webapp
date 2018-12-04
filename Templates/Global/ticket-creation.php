@@ -18,6 +18,9 @@
                 <textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
 				<br>
                 <input type="submit" value="Valider">
+				<?php
+					echo $param['error'];
+				?>
             </form>
 
 		</body>
