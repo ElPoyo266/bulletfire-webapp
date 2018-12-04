@@ -64,7 +64,7 @@
 		if ($verif === false) {
 			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Billet(nickname, titre, contenu) VALUES (?, ?, ?)");
-			$q->execute([$nickname, htmlspecialchars($titre),htmlspecialchars($contenu)]);
+			$q->execute(["toto", htmlspecialchars($titre),htmlspecialchars($contenu)]);
 		}
 
 	}
