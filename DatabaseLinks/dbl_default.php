@@ -20,7 +20,7 @@
 		require_once("Classes/Entities/user.php");
 		$user = new User($res["ID_User"], $res["Mail"], $res["Pass"], $res["Pseudo"], $res["Pic"]);
 		$q->closeCursor();
-		return $user;
+		return $user; 
 	}
 
 	function insertNewPlayer ($nickname, $surname, $name, $mail, $pwd) {
