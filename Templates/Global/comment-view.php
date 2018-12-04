@@ -48,6 +48,8 @@
 				<br>
                 <input type="submit" value="Envoyer">
             </form>
-
+			<?php
+					echo $param['error'];
+				?>
 		</body>
 	</html>

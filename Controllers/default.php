@@ -61,6 +61,10 @@
 			return $view->showTime();
 		}
 
+
+
+
+
 	public function ticketCreation(){
 	//Est-ce que tous les champs sont remplis ?
 		$taberror = array();
@@ -78,6 +82,10 @@
 		return $view->showTime();
 	}	
 
+
+
+
+
 	public function recupTicket(){
 		$envoi = array();
 		if(isset($_GET['id']))
@@ -92,6 +100,8 @@
 		}
 
 	}
+
+
 
 
 
@@ -119,7 +129,7 @@
 					$taberror[] = array("Votre commentaire a bien été pris en compte.");
 				}
 		}
-		$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment));
+		$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment), array('error'=>$taberror));
 		return $view->showTime();
 
 	}
