@@ -115,7 +115,7 @@
 
 	function selectComment($id){
 		$com = array();
-		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y\') AS date_commentaire, 					DATE_FORMAT(date_commentaire, \'%Hh%imin%ss\') AS heure_commentaire FROM Commentaires WHERE id = ?');
+		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y\') AS date_commentaire, DATE_FORMAT(date_commentaire, \'%Hh%imin%ss\') AS heure_commentaire FROM Commentaires WHERE id = ?');
 			$data = $q->execute(array($_GET['id']));
 			while($data = $q->fetch()){
 			$com[] = array("titre"=>$data['titre'], 
