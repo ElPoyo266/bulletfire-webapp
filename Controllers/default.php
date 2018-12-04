@@ -85,7 +85,7 @@
 
 
 
-
+ 
 	public function recupTicket(){
 		$envoi = array();
 		if(isset($_GET['id']))
