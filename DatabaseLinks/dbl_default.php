@@ -81,7 +81,7 @@
 					"titre"=>$data['titre'], 
 					"contenu"=>$data['contenu'], 
 					"dateBillet"=>$data['date_billet'], 
-					"heureBillet"=>$data['heure_billet']);
+					"heureBillet"=>$data['heure_billet']); 
 		}
 		$q->closeCursor();
 		return $recup;
