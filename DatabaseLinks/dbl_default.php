@@ -71,12 +71,13 @@
 	function selectTicket(){
 		global $db;
 		$recup = array();
-		$q = $db->query('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
 								FROM Billet
 								ORDER BY date_creation DESC');
 		while($data = $q->fetch()){
-			$recup[] = array("id"=>$data['id'] , 
+			$recup[] = array("id"=>$data['id'] ,
+					"auteur"=>$data['auteur'] 
 					"titre"=>$data['titre'], 
 					"contenu"=>$data['contenu'], 
 					"dateBillet"=>$data['date_billet'], 
@@ -89,7 +90,7 @@
 	function selectTicketById($id){
 		global $db;
 		$recup = array();
-		$q = $db->query('SELECT id, titre, nickname, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
+		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
 									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
 								FROM Billet
 								WHERE id = ? 
@@ -97,19 +98,24 @@
 
 		$q->execute(htmlspecialchars($id));
 		$q->fetch();
-		$recup[] = array("titre"=>$data['titre'], 
+		$recup[] = array("auteur"=>$data['auteur'],
+			"titre"=>$data['titre'], 
 			"contenu"=>$data['contenu'], 
 			"dateBillet"=>$data['date_billet'], 
 			"heureBillet"=>$data['heure_billet']);
 	}
 
+
+
 	function insertNewComment($titre, $contenu){
 		global $db;
-			$q = $db->prepare("INSERT INTO Billet(nickname, contenu) VALUES (?, ?)");
-			$q->execute([htmlspecialchars($nickname),htmlspecialchars($contenu)]);
+			$q = $db->prepare("INSERT INTO Commentaires(auteur, contenu) VALUES (?, ?)");
+			$q->execute([htmlspecialchars($auteur),htmlspecialchars($contenu)]);
 			$q->closeCursor();
 
 	}
+
+
 
 	function selectComment($id){
 		$com = array();
@@ -126,5 +132,8 @@
 		return $com;
 	}
     
+
+
+	
 
 ?> 
