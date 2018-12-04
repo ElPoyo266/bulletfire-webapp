@@ -49,6 +49,10 @@
 		$q->execute([htmlspecialchars($mail)]);
 	}
 
+
+
+
+
 	function insertNewTicket($auteur, $titre, $contenu){
 		global $db;
 		$verif=false;
@@ -68,6 +72,12 @@
 		}
 
 	}
+
+
+
+
+
+
 	function selectTicket(){
 		global $db;
 		$recup = array();
@@ -86,6 +96,11 @@
 		$q->closeCursor();
 		return $recup;
 	}
+
+
+
+
+
 
 	function selectTicketById($id){
 		global $db;
@@ -107,6 +122,9 @@
 
 
 
+
+
+
 	function insertNewComment($titre, $contenu){
 		global $db;
 			$q = $db->prepare("INSERT INTO Commentaires(auteur, contenu) VALUES (?, ?)");
@@ -114,6 +132,9 @@
 			$q->closeCursor();
 
 	}
+
+
+
 
 
 

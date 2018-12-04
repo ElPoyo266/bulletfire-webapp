@@ -64,9 +64,9 @@
 	public function ticketCreation(){
 	//Est-ce que tous les champs sont remplis ?
 		$taberror = array();
-		if (isset($_POST['titre']) and isset($_POST['contenu']))
+		if (isset($_POST['auteur'] and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
-			insertNewTicket($_POST['titre'], $_POST['contenu']);
+			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu']);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
@@ -102,13 +102,25 @@
 		{
 			$ticket = selectTicketbyId($_GET['id']);
 			$comment = selectComment($_GET['id']);
-			$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment));
-			return $view->showTime();
 		}
 		if(isset($error))
 		{
 			echo '<p>'.$error.'</p>';
 		}
+
+		$taberror = array();
+		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
+		{
+			insertNewComment($_POST['auteur'], $_POST['commentaire']);
+				if (isset($error)) {
+					$taberror[] = array($error);
+				}
+				else{
+					$taberror[] = array("Votre commentaire a bien été pris en compte.");
+				}
+		}
+		$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment));
+		return $view->showTime();
 
 	}
 

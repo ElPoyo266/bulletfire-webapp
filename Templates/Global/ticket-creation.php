@@ -12,8 +12,9 @@
 		<body>
 			<h1><?= ' '/*$translate->translate('Ticket creation');*/ ?></h1>
 			<form action="" method="post">
-				<label for="titre">Titre</label>
+				<label for="auteur">Auteur</label>
 				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
+				<label for="titre">Titre</label>
                 <input type="text" name="titre" id="titre" placeholder="Entrer votre titre de post"></textarea>
                 <label for="contenu">Contenu</label>
                 <textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
