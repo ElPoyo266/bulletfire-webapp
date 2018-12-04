@@ -52,8 +52,7 @@
 	function insertNewTicket($titre, $contenu){
 		global $db;
 		$verif=false;
-		$q = $db->prepare('SELECT titre
-                         		FROM Billet');
+		$q = $db->prepare('SELECT titre FROM Billet');
 	 	$q->execute();
 	 	while ($data = $q->fetch())
 		{
