@@ -49,7 +49,7 @@
 		$q->execute([htmlspecialchars($mail)]);
 	}
 
-	function insertNewTicket($nickname, $titre, $contenu){
+	function insertNewTicket($auteur, $titre, $contenu){
 		global $db;
 		$verif=false;
 		$q = $db->prepare('SELECT titre FROM Billet');
