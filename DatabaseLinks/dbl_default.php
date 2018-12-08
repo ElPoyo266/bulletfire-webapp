@@ -81,8 +81,8 @@
 	function selectTicket(){
 		global $db;
 		$recup = array();
-		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y\') AS date_billet, 
-									DATE_FORMAT(date_creation, \'%Hh%imin%ss\') AS heure_billet 
+		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, "%M %d %Y") AS date_billet, 
+									DATE_FORMAT(date_creation, "%Hh%imin%ss") AS heure_billet 
 								FROM Billet
 								ORDER BY date_creation DESC');
 		while($data = $q->fetch()){
