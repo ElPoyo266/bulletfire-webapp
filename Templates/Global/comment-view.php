@@ -15,7 +15,7 @@
 				<div class="ticket">
 				<?php
 					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
-					echo'<p> le ' . $param['ticket']['date_billet'] . ' à ' . $param['ticket']['heure_billet'] . '</p>';
+					echo'<p>' . $param['ticket']['date_billet_cplt'] . '</p>';
 				?>
 				<p>
 				<?php
