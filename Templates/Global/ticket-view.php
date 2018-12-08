@@ -19,7 +19,12 @@
 					?>
 					<p>
 					<?php
-                        echo '"' . htmlspecialchars($ticket['titre']) . '"' . $ticket['date_creation_cplt'];
+                        echo '"' . htmlspecialchars($ticket['titre']) . '"';
+					?>
+					</p>
+					<p>
+					<?php
+						echo $ticket['date_creation_cplt'];
 						echo htmlspecialchars($ticket['contenu']);
 					}
                 	?>
