@@ -88,14 +88,10 @@
  
 	public function recupTicket(){
 		$envoi = array();
-		if(isset($_GET['id']))
-		{
-			$envoi = selectTicket();
-			$view = new Template("Global:ticket-view", array('ticket'=> $envoi));
-			return $view->showTime();
-		}
-		if(isset($error))
-		{
+		$envoi = selectTicket();
+		$view = new Template("Global:ticket-view", array('ticket'=> $envoi));
+		return $view->showTime();
+		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
 
