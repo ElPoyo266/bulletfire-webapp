@@ -13,15 +13,12 @@
 
 			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?></h1>
 			<div class="ticket view">
-				<a href="comment-view.php?id=<?=$ticket['id']?>"><h3>
+				<a href="comment-view.php?id=<?=$param['ticket']['id']?>"><h3>
 					<?php
-                    
                     foreach($param['ticket'] as $ticket){
                         echo htmlspecialchars($ticket['titre'] . ' le ' . $ticket['date_billet'] . ' à ' . $ticket['heure_billet']);
+					}
                 	?>
-                	<?php
-                	}
-					?>
 				</h3>
 				<br/>
 				</a>
