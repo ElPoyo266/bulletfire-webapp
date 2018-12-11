@@ -8,6 +8,7 @@
 	class Player {
 
 		// Variables ...
+		private $id = null;
 		private $nickname = null;
 		private $surname = null;
 		private $name = null;
@@ -23,19 +24,20 @@
 		// ... END
 
 		// Constructor ...
-		public function __construct ($nickname = null, $surname = null, $name = null, $mail = null, $pwd = null) {
+		public function __construct ($nickname = null, $surname = null, $name = null, $mail = null, $pwd = null, $admin = 0, $id = null) {
 			$this->nickname = $nickname;
 			$this->surname = $surname;
 			$this->name = $name;
 			$this->mail = $mail;
 			$this->pwd = $pwd;
-			$this->admin = 0;
+			$this->admin = $admin;
 			$this->kda = 0;
 			$this->killnb = 0;
 			$this->playtime = '00:00:00';
 			$this->winrate = 0;
 			$this->accuracy = 0;
 			$this->headshotrate = 0;
+			$this->id = $id;
 		}
 		// ... END
 
@@ -136,6 +138,26 @@
 			return $this->headshotrate;
 		}
 		// ... END
+
+		/**
+		 * Get the value of id
+		 */ 
+		public function getId()
+		{
+				return $this->id;
+		}
+
+		/**
+		 * Set the value of id
+		 *
+		 * @return  self
+		 */ 
+		public function setId($id)
+		{
+				$this->id = $id;
+
+				return $this;
+		}
 	}
 
 ?>
