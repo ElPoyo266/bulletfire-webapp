@@ -16,12 +16,12 @@ class Basket {
         $this->products = new array();
     }
 
-    public function addQuantity ($product, $quantity) {
-        $this->products[$product->getName()]["quantity"] += $quantity;
+    public function addQuantity ($product) {
+        $this->products[$product->getName()]["quantity"] += 1;
     }
 
-    public function removeQuantity ($product, $quantity) {
-        $this->products[$product->getName()]["quantity"] -= $quantity;
+    public function removeQuantity ($product) {
+        $this->products[$product->getName()]["quantity"] -= 1;
     }
 
     public function getProducts () {

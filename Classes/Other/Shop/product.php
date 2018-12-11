@@ -6,16 +6,18 @@ class Product {
     private $price;
     private $desc;
     private $pic;
-    private $type; // Soit 1 pour les coffres ou 2 pour la money
+    private $id;
+    private $type; // Soit 2 pour les coffres ou 1 pour la money
     private $quantity; // Combien de coffres ou de money
 
-    public function __constructor ($name, $price, $desc, $pic, $type, $quantity){
+    public function __constructor ($name, $price, $desc, $pic, $type, $id, $quantity = 0){
         $this->name = $name;
         $this->price = $price;
         $this->desc = $desc;
         $this->pic = $pic;
         $this->type = $type;
         $this->quantity = $quantity;
+        $this->id = $id;
     }
 
     
@@ -66,6 +68,26 @@ class Product {
     public function getQuantity()
     {
         return $this->quantity;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 }
 

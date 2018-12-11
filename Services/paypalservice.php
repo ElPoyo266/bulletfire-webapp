@@ -1,6 +1,6 @@
 <?php 
 
-function getApiContext () {
+function getApiContext ($ids) {
     $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
             $ids['id'],

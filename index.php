@@ -2,6 +2,7 @@
 	
 	// User Entity (for connection)
 	require "Classes/Entities/player.php";
+	require "Classes/Other/Shop/basket.php";
 	// End
 
 	session_start();
@@ -12,6 +13,7 @@
 	require "_config/hide/controller.php";
 	require "_config/hide/services.php";
 	require "_config/hide/dblink.php";
+	require "_config/hide/config.php";
 	// End
 
 	// Your script(s) to interact with the database(s)
