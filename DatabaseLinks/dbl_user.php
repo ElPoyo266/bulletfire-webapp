@@ -1,6 +1,6 @@
 <?php 
 
-    public function tryToConnect ($pseudo, $pass) {
+    function tryToConnect ($pseudo, $pass) {
         global $db;
         $pass = hash("sha256", $pass);
         $q = $db->prepare("SELECT * FROM Player WHERE nickname = ? AND pwd = ?");
