@@ -22,7 +22,7 @@
                 <h3><?= $p->getDesc()?></h3>
                 <img src="<?= $p->getPic()?>" alt="Pic">
                 <strong>Prix : <?= $p->getPrice()?></strong>
-                <?php if(isset(PLAYER)) : ?>
+                <?php if(isset($_SESSION["Player"])) : ?>
                     <button type="button">Ajouter au panier</button>
                 <?php endif; ?>
             </div>
