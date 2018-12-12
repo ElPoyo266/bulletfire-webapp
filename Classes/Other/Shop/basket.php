@@ -2,7 +2,7 @@
 
 class Basket {
 
-    private $products = new array();
+    private $products = array();
 
     public function addProduct ($product, $quantity) {
         $this->products[$product->getName()] = array("product" => $product, "quantity" => $quantity);
@@ -13,7 +13,7 @@ class Basket {
     }
 
     public function clearProducts () {
-        $this->products = new array();
+        $this->products = array();
     }
 
     public function addQuantity ($product) {
