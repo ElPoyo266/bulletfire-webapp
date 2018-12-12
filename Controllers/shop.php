@@ -156,7 +156,7 @@
 
         /* ###  Private functions  ### */
         private function getProducts () {
-            require_once("Classes/Other/product.php");
+            require_once("Classes/Other/Shop/product.php");
             return [
                 new Product ("Poignée de billets", 1.99, "Obtenez 10 000 bills !", "", 1, 1),
                 new Product ("Sacoche de billets", 4.99, "Obtenez 50 000 bills !", "", 1, 2),
