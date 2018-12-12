@@ -4,7 +4,7 @@
 
         /* ###  User call  ### */
         public function shop () {
-            $products = getProducts();
+            $products = $this->getProducts();
             $view = new Template("Shop:shop", array('products' => $products));
         }
 
@@ -58,7 +58,7 @@
             if($_POST["productQuantity"] < 0 || $_POST["productQuantity"] > 100) return "error";
 
             // Check product
-            $products = getProducts();
+            $products = $this->getProducts();
             $prod = null;
             foreach($products as $p) {
                 if($p->getId() == $_POST["productId"]) {
@@ -87,7 +87,7 @@
             if(!isset($_SESSION["Basket"])) return "error";
 
             // Check product
-            $products = getProducts();
+            $products = $this->getProducts();
             $prod = null;
             foreach($products as $p) {
                 if($p->getId() == $_POST["productId"]) {
@@ -113,7 +113,7 @@
             if(!isset($_SESSION["Basket"])) return "error";
 
             // Check product
-            $products = getProducts();
+            $products = $this->getProducts();
             $prod = null;
             foreach($products as $p) {
                 if($p->getId() == $_POST["productId"]) {
@@ -139,7 +139,7 @@
             if(!isset($_SESSION["Basket"])) return "error";
 
             // Check product
-            $products = getProducts();
+            $products = $this->getProducts();
             $prod = null;
             foreach($products as $p) {
                 if($p->getId() == $_POST["productId"]) {
