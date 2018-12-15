@@ -3,6 +3,7 @@
 	// User Entity (for connection)
 	require "Classes/Entities/player.php";
 	require "Classes/Other/Shop/basket.php";
+	require "Classes/Other/Shop/product.php";
 	// End
 
 	session_start();

@@ -10,7 +10,7 @@ class Product {
     private $type; // Soit 2 pour les coffres ou 1 pour la money
     private $quantity; // Combien de coffres ou de money
 
-    public function __constructor ($name, $price, $desc, $pic, $type, $id, $quantity = 0){
+    public function __construct ($name, $price, $desc, $pic, $type, $id, $quantity = 0){
         $this->name = $name;
         $this->price = $price;
         $this->desc = $desc;

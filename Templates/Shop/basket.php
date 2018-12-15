@@ -42,7 +42,7 @@
         <div>
             <h3>Total : </h3>
             <?= $param["basket"]->getPrice() ?>
-            <a href="<?= PATH . '/shop/pay'?>">Payer avec PayPal</a>
+            <a href="<?= PATH . 'pay'?>">Payer avec PayPal</a>
         </div>
         <?php 
         endif;

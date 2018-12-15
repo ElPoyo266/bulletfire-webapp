@@ -26,11 +26,14 @@
 
         public function payment () {
             $player = requireConnection();
-            $ids = reqire_once("Config/paypal.php");
+            $ids = require_once("Config/paypal.php");
+            $basket = $_SESSION["Basket"];
+            require 'vendor/autoload.php';
+            require_once 'Classes/Other/Shop/TransactionFactory.php';
             // Check session basket
             $apiContext = getApiContext($ids);
             $payment = new \PayPal\Api\Payment();
-            $payment->addTransaction(\Grafikart\TransactionFactory::fromBasket($basket));
+            $payment->addTransaction(TransactionFactory::fromBasket($basket));
             $payment->setIntent('sale');
             $redirectUrls = (new \PayPal\Api\RedirectUrls())
                 ->setReturnUrl(SITEPATH . 'shop/validpay.php')
@@ -49,7 +52,7 @@
         /* ###  Ajax call  ### */
         public function ajaxAddProduct () {
             $player = checkConnection();
-            if($player == null) return "error";
+            if($player == null) return "error 1";
 
             // Check post
             if(!isset($_POST["productId"]) || !isset($_POST["productQuantity"])) return "error";
@@ -156,7 +159,6 @@
 
         /* ###  Private functions  ### */
         private function getProducts () {
-            require_once("Classes/Other/Shop/product.php");
             return [
                 new Product ("Poignée de billets", 1.99, "Obtenez 10 000 bills !", "", 1, 1),
                 new Product ("Sacoche de billets", 4.99, "Obtenez 50 000 bills !", "", 1, 2),
