@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="<?= ASSET . 'CSS/basket.css' ?>" />
         <script src="<?= ASSET . 'JS/basket.js' ?>"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
     </head>
 
@@ -18,12 +19,12 @@
         $nb = 0;
         foreach($param["basket"]->getProducts() as $p) :
         ?>
-            <div>
+            <div id="prod_<?= $p->getId() ?>">
                 <h3><?= $p["product"]->getName() ?></h3>
-                <button type="button" class="littlebut">-</button>
-                <strong>Quantité : <?= $p["quantity"] ?></strong>
-                <button type="button" class="littlebut">+</button>
-                <button type="button" class="littlebut remove">X</button>
+                <button type="button" class="littlebut" onclick="decreaseProd(<?= $p->getId() ?>)">-</button>
+                <strong quantity>Quantité : <?= $p["quantity"] ?></strong>
+                <button type="button" class="littlebut" onclick="increaseProd(<?= $p->getId() ?>)">+</button>
+                <button type="button" class="littlebut remove" onclick="removeFromBasket(<?= $p->getId() ?>)">X</button>
             </div>
         <?php
             $nb++;
@@ -42,6 +43,7 @@
         ?>
         <div>
             <h3>Total : </h3>
+            Prix : 
             <?= $param["basket"]->getPrice() ?>
             <a href="<?= PATH . 'pay'?>" class="but">Payer avec PayPal</a>
         </div>
