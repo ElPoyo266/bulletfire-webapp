@@ -3,6 +3,7 @@ header {
     height : 50px;
     background: #252525;
     box-shadow: 0 0 5px 0 black;
+    z-index: 100;
 }
 
 header ul {
