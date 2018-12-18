@@ -1,0 +1,44 @@
+body > div {
+    display: inline-block;
+    width : 500px;
+    height : 500px;
+    background: #252525;
+    box-shadow: 0 0 5px 0 black;
+}
+
+body > div h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+body > div img {
+    display: block;
+    margin : auto;
+    height: 300px;
+    width : 300px;
+}
+
+body > div h3 {
+    margin : 20px;
+}
+
+body > div strong {
+    margin-left : 20px;
+}
+
+body > div button {
+    background: none;
+    border : solid 2px white;
+    border-radius: 10px;
+    width : 200px;
+    height : 30px;
+    color : white;
+    font-family: 'Arial';
+    font-size: 18px;
+    margin-left: 50px;
+}
+
+body > div button:hover {
+    background: white;
+    color : black;
+}
