@@ -86,7 +86,7 @@
 
 
  
-	public function recupTicket(){
+	public function recupTicket($id){
 		$envoi = array();
 		$envoi = selectTicket();
 		if(isset($error)){
