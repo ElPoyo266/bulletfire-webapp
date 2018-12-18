@@ -2,9 +2,28 @@ div {
     margin : auto;
     width : 500px;
     height : 200px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.1);
+    position: relative;
+    text-align: center;
 }
 
 div h3 {
-    
+    margin : 20px;
+}
+
+.littlebut {
+    background: none;
+}
+
+.remove {
+    position : absolute;
+    top : 5px; right : 5px;
+}
+
+.but {
+    display: block;
+    height : 25px; width : 150px;
+    background: #253B80;
+    color : inherit;
+    text-decoration: none;
 }

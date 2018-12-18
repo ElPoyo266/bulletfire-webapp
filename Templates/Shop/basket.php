@@ -20,10 +20,10 @@
         ?>
             <div>
                 <h3><?= $p["product"]->getName() ?></h3>
-                <button type="button">-</button>
+                <button type="button" class="littlebut">-</button>
                 <strong>Quantité : <?= $p["quantity"] ?></strong>
-                <button type="button">+</button>
-                <button type="button">X</button>
+                <button type="button" class="littlebut">+</button>
+                <button type="button" class="littlebut remove">X</button>
             </div>
         <?php
             $nb++;
@@ -43,7 +43,7 @@
         <div>
             <h3>Total : </h3>
             <?= $param["basket"]->getPrice() ?>
-            <a href="<?= PATH . 'pay'?>">Payer avec PayPal</a>
+            <a href="<?= PATH . 'pay'?>" class="but">Payer avec PayPal</a>
         </div>
         <?php 
         endif;

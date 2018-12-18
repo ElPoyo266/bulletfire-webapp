@@ -4,6 +4,7 @@ main > div {
     height : 500px;
     background: #252525;
     box-shadow: 0 0 5px 0 black;
+    margin : 20px;
 }
 
 main > div h2 {
