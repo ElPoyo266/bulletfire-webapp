@@ -2,14 +2,17 @@
 	<html>
 		<head>
 
-			<meta charset="utf-8">
+			
 			<title>My FramePhp App</title>
+			<?php require("Templates/Global/head.php") ?>
 			<!-- The constant ASSET allows you to access the Assets folder to get your css or js files or your images -->
 			<link rel="stylesheet" type="text/css" href="<?= ASSET . 'Styles/home.css' ?>">
 
 		</head>
 		
 		<body>
+
+			<?php require("Templates/Global/header.php") ?>
 
 			<h1>FramePhp</h1>
 			<?php echo $param['var'] ?>

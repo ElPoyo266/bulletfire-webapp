@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <meta charset="utf-8" />
+        <?php require("Templates/Global/head.php") ?>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Bulletfire - Panier</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        
+        <?php require("Templates/Global/header.php") ?>
         <?php 
         $nb = 0;
         foreach($param["basket"]->getProducts() as $p) :
