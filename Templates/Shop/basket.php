@@ -13,6 +13,7 @@
 
     <body>
         <?php require("Templates/Global/header.php") ?>
+        <h1>Panier</h1>
         <?php 
         $nb = 0;
         foreach($param["basket"]->getProducts() as $p) :

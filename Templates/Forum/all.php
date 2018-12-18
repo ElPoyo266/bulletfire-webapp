@@ -12,7 +12,7 @@
 		<body>
 			<?php require("Templates/Global/header.php") ?>
 			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h1>
-			<div class="ticket view">
+			<div class="ticket-view">
 					<?php
                     foreach($param['ticket'] as $ticket):
 					?>
