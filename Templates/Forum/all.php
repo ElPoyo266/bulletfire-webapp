@@ -14,24 +14,15 @@
 			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?></h1>
 			<div class="ticket view">
 					<?php
-                    foreach($param['ticket'] as $ticket){
+                    foreach($param['ticket'] as $ticket):
 					?>
-					<a href="comment-view.php?id=<?=$param['ticket']['id']?>"><h3>
-					<p>
-					<?php
-                        echo '"' . htmlspecialchars($ticket['titre']) . '"';
-					?>
-					</p>
-					<p>
-					<?php
-						echo $ticket['date_creation_cplt'];
-						echo htmlspecialchars($ticket['contenu']);
-					}
-                	?>
-					</p>
-				</h3>
-				</a>
-				<br/>
+					<a href="<?= PATH . '/forum/post/' . $ticket['id'] ?>">
+                        <h3><?= htmlspecialchars($ticket['titre'])?></h3>
+                        <p><?= $ticket['date_billet_cplt'] . ' ' . htmlspecialchars($ticket['contenu']) ?></p>
+				    </a>
+                    <?php 
+                    endforeach;
+                    ?>
 			</div>
 
 		</body>

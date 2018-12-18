@@ -89,31 +89,25 @@
 	public function recupTicket(){
 		$envoi = array();
 		$envoi = selectTicket();
-		$view = new Template("Global:ticket-view", array('ticket'=> $envoi));
-		return $view->showTime();
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
-
+		$view = new Template("Forum:all", array('ticket'=> $envoi));
+		return $view->showTime();
 	}
 
 
 
 
 
-	public function CommentPost(){
+	public function CommentPost($id){
+		// Recuperation du post et des commentaires
 		$ticket = array();
 		$comment = array();
-		if(isset($_GET['id']))
-		{
-			$ticket = selectTicketbyId($_GET['id']);
-			$comment = selectComment($_GET['id']);
-		}
-		if(isset($error))
-		{
-			echo '<p>'.$error.'</p>';
-		}
+		$ticket = selectTicketbyId($id);
+		$comment = selectComment($id);
 
+		// Ajout d'un commentaire
 		$taberror = array();
 		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
 		{
@@ -125,7 +119,9 @@
 					$taberror[] = array("Votre commentaire a bien été pris en compte.");
 				}
 		}
-		$view = new Template("Global:comment-view", array('ticket'=> $ticket), array('comment'=>$comment), array('error'=>$taberror));
+
+
+		$view = new Template("Global:comment-view", array('ticket'=> $ticket, 'comment'=>$comment, 'error'=>$taberror));
 		return $view->showTime();
 
 	}

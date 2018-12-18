@@ -15,6 +15,7 @@
     
     <body>
         <?php require("Templates/Global/header.php") ?>
+        <main>
         <?php
         foreach($param["products"] as $p) : 
         ?>
@@ -30,7 +31,7 @@
         <?php 
         endforeach;
         ?>
-
+        </main>
     </body>
 
 </html>

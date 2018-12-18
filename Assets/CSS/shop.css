@@ -1,4 +1,4 @@
-body > div {
+main > div {
     display: inline-block;
     width : 500px;
     height : 500px;
@@ -6,27 +6,27 @@ body > div {
     box-shadow: 0 0 5px 0 black;
 }
 
-body > div h2 {
+main > div h2 {
     text-align: center;
     font-size: 30px;
 }
 
-body > div img {
+main > div img {
     display: block;
     margin : auto;
     height: 300px;
     width : 300px;
 }
 
-body > div h3 {
+main > div h3 {
     margin : 20px;
 }
 
-body > div strong {
+main > div strong {
     margin-left : 20px;
 }
 
-body > div button {
+main > div button {
     background: none;
     border : solid 2px white;
     border-radius: 10px;
@@ -38,7 +38,14 @@ body > div button {
     margin-left: 50px;
 }
 
-body > div button:hover {
+main > div button:hover {
     background: white;
     color : black;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center
 }
