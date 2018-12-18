@@ -19,6 +19,13 @@
             $view = new Template("User:connection", array("error" => $error));
             return $view->showTime();
         }
+
+        public function deconnection () {
+            $player = requireConnection();
+            unset($_SESSION["Player"]);
+            header("Location: /");
+            exit(0);
+        }
     }
 
 
