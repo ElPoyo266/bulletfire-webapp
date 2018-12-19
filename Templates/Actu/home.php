@@ -18,7 +18,7 @@
 					<a href="<?= PATH . '/actu/' . $actu->getId() ?>">
 						<h3><?= $actu->getTitle ?></h3>
                         <strong><?= $actu->getCat() ?></strong>
-						<i><?= $actu->getDate()->format("d-m-Y:H-i") ?></i>
+						<i><?= new Date($actu->getDate())->format("d-m-Y:H-i") ?></i>
 				    </a>
                     <?php 
                     endforeach;
