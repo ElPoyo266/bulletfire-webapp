@@ -16,25 +16,32 @@
         <div>
             <form method="post">
 
-                <h1>Connexion</h1>
+                <h3>Connexion</h3>
 
-                <?php
-                    if($param["error"]) : 
-                ?>
-                        <strong>Pseudo ou mot de passe incorrect</strong>
-                <?php 
-                    endif;
-                ?>
+                <span>
+                    
+                    <?php
+                        if($param["error"]) : 
+                    ?>
+                            <strong>Pseudo ou mot de passe incorrect</strong>
+                    <?php 
+                        endif;
+                    ?>
 
-                <label for="username">Pseudo : 
-                    <input type="text" name="username" id="username">
-                </label>
+                    <label for="username">Pseudo : 
+                        <input type="text" name="username" id="username">
+                    </label>
 
-                <label for="password">Mot de passe : 
-                    <input type="password" name="password" id="password">
-                </label>
+                    <label for="password">Mot de passe : 
+                        <input type="password" name="password" id="password">
+                    </label>
+                    
+                    <button type="submit" class="button">Se connecter</button>    
+
+                </span>
                 
-                <button type="submit">Se connecter</button>
+
+                <a href="<?= PATH .'/register' ?>">Créer un compte</a>
 
             </form>
         </div>

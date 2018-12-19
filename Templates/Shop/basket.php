@@ -14,17 +14,17 @@
 
     <body>
         <?php require("Templates/Global/header.php") ?>
-        <h1>Panier</h1>
+        <h3>Panier</h3>
         <?php 
         $nb = 0;
         foreach($param["basket"]->getProducts() as $p) :
         ?>
-            <div id="prod_<?= $p->getId() ?>">
+            <div id="prod_<?= $p["product"]->getId() ?>">
                 <h3><?= $p["product"]->getName() ?></h3>
-                <button type="button" class="littlebut" onclick="decreaseProd(<?= $p->getId() ?>)">-</button>
+                <button type="button" class="littlebut" onclick="decreaseProd(<?= $p["product"]->getId() ?>)">-</button>
                 <strong quantity>Quantité : <?= $p["quantity"] ?></strong>
-                <button type="button" class="littlebut" onclick="increaseProd(<?= $p->getId() ?>)">+</button>
-                <button type="button" class="littlebut remove" onclick="removeFromBasket(<?= $p->getId() ?>)">X</button>
+                <button type="button" class="littlebut" onclick="increaseProd(<?= $p["product"]->getId() ?>)">+</button>
+                <button type="button" class="littlebut remove" onclick="removeFromBasket(<?= $p["product"]->getId() ?>)">X</button>
             </div>
         <?php
             $nb++;

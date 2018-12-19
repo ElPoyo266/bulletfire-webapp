@@ -11,7 +11,7 @@
 		
 		<body>
 			<?php require("Templates/Global/header.php") ?>
-			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h1>
+			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
 			<div class="ticket-view">
 					<?php
                     foreach($param['ticket'] as $ticket):

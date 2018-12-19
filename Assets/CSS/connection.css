@@ -1,0 +1,52 @@
+form {
+	position: absolute;
+	top : 50%; left : 50%;
+	transform: translate(-50%, -50%);
+	width : 400px;
+	height : 500px;
+	background: #252525;
+	box-shadow: 0 0 5px 0 black;
+}
+form h3 {
+	text-align: center;
+	margin : 50px 0;
+}
+
+form span {
+	position: absolute;
+	top : 50%; left : 50%;
+	transform: translate(-50%, -50%);
+	width : 100%;
+}
+
+form label {
+	display: block;
+	width : 90%;
+	margin : 20px auto; 
+}
+
+form input {
+	display: block;
+	margin : 5px 0;
+	width : 90%;
+	padding : 0 5%;
+	height : 30px;
+	background: none;
+	border : none;
+	border-bottom : solid 2px white;
+	color : white;
+	font-size : 18px;
+	font-family: 'Arial';
+}
+
+form a {
+	position: absolute;
+	bottom : 5px;
+	right : 10px;
+}
+
+form button {
+	display: block;
+	margin : auto;
+	margin-top : 25px;
+}

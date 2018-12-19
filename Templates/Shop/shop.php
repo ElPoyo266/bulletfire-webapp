@@ -15,6 +15,7 @@
     
     <body>
         <?php require("Templates/Global/header.php") ?>
+        <h3>Panier</h3>
         <main>
         <?php
         foreach($param["products"] as $p) : 

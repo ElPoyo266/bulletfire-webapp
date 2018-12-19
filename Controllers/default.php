@@ -28,10 +28,10 @@
 				isset($_POST['surname']) and
 				isset($_POST['name']))
 			{
-				//Est-ce que le mot de passe et l'e-mail sont confirmés ?
+				/*//Est-ce que le mot de passe et l'e-mail sont confirmés ?
 				if ((($_POST['pwd']) === ($_POST['pwd1'])) and
 				(($_POST['mail']) === ($_POST['mail1']))) 
-				{
+				{*/
 					$hash = hash('sha256', $_POST["pwd"]);
 					
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
@@ -46,7 +46,7 @@
 						// Appel de la fonction pour insérer son e-mail dans la table Newsletter
 						newsletterSub ($_POST['mail']);
 					}
-				} else {
+				/*} else {
 					if (($_POST['pwd']) !== ($_POST['pwd1'])) {
 						echo '<p>'.'Erreur : mots de passe entrés différents'.'<p>';
 					}
@@ -54,7 +54,7 @@
 					if (($_POST['mail']) !== ($_POST['mail1'])) {
 						echo '<p>'.'Erreur : e-mails entrés différents'.'<p>';
 					}
-				}
+				}*/
 			}
 
 			$view = new Template("Global:account-creation");

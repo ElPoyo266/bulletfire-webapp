@@ -10,20 +10,23 @@
 		
 		<body>
 			<?php require("Templates/Global/header.php") ?>
-			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?>Actualités</h1>
-			<div>
+			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Actualités</h3>
+			<main>
 					<?php
                     foreach($param['actu'] as $actu):
 					?>
 					<a href="<?= PATH . '/actu/' . $actu->getId() ?>">
-						<h3><?= $actu->getTitle ?></h3>
-                        <strong><?= $actu->getCat() ?></strong>
+						<div>
+							<img src="<?= ASSET . 'PICS/Articles/' . $actu->getPic() ?>">
+							<h4><?= $actu->getTitle() ?></h4>
+						</div>
+						<strong><?= $actu->getCat() ?> by Bulletfire team</strong>
 						<i><?= $actu->getDate() ?></i>
 				    </a>
                     <?php 
                     endforeach;
                     ?>
-			</div>
+			</main>
 
 		</body>
     </html>
