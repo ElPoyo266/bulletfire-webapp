@@ -1,7 +1,7 @@
 <?php 
 
 
-    function getAllActus () {
+    function getAllArticles () {
         global $db;
         $q = $db->prepare("SELECT * FROM Article");
         $q->execute([]);
