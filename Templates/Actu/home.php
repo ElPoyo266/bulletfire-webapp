@@ -16,8 +16,9 @@
                     foreach($param['actu'] as $actu):
 					?>
 					<a href="<?= PATH . '/actu/' . $actu->getId() ?>">
-                        <h3><?= htmlspecialchars($ticket['titre'])?></h3>
-                        <p><?= $ticket['date_billet_cplt'] . ' ' . htmlspecialchars($ticket['contenu']) ?></p>
+						<h3><?= $actu->getTitle ?></h3>
+                        <strong><?= $actu->getCat() ?></strong>
+						<i><?= $actu->getDate()->format("d-m-Y:H-i") ?></i>
 				    </a>
                     <?php 
                     endforeach;
