@@ -36,10 +36,9 @@
 				<?php
 					echo htmlspecialchars($comment['commentaire']);
 				?>
-				<br />
+				<br/>
 				</p>
 				</div>
-					?>
 			<h1><?= ' '/*$translate->translate('Comment creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Auteur</label>
@@ -49,8 +48,5 @@
 				<br>
                 <input type="submit" value="Envoyer">
             </form>
-			<?php
-					echo $param['error'];
-				?>
 		</body>
 	</html>

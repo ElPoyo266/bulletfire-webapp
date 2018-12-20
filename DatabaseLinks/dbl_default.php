@@ -116,11 +116,11 @@
 
 	function selectComment($id){
 		global $db;
-		$com = null;
+		$com = array();
 		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_com_cplt  FROM Commentaires WHERE id_billet = ?');
 			$data = $q->execute(array($_GET['id']));
 			while($data = $q->fetch()){
-				$com = array("auteur"=>$data['auteur'],
+				$com[] = array("auteur"=>$data['auteur'],
 				"titre"=>$data['titre'], 
 				"commentaire"=>$data['commentaire'], 
 				"date_com_cplt"=>$data['date_commentaire']);
