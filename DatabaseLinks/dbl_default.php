@@ -80,14 +80,14 @@
 
 	function selectTicket(){
 		global $db;
-		$recup = array();
+		$recup = null;
 		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet ORDER BY date_creation DESC');
 		while($data = $q->fetch()){
-			$recup[] = array("id"=>$data['id'],
+			$recup = array("id"=>$data['id'],
 					"auteur"=>$data['auteur'], 
 					"titre"=>$data['titre'], 
 					"contenu"=>$data['contenu'], 
-					"date_creation_cplt"=>$data['date_billet_cplt']); 
+					"date_creation_cplt"=>$data['date_creation']); 
 		}
 		$q->closeCursor();
 		return $recup;
@@ -100,14 +100,14 @@
 
 	function selectTicketById($id){
 		global $db;
-		$recup = array();
+		$recup = null;
 		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_billet, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet WHERE id = ? ORDER BY date_creation DESC');
 		$q->execute([htmlspecialchars($id)]);
 		$q->fetch();
-		$recup[] = array("auteur"=>$data['auteur'],
+		$recup = array("auteur"=>$data['auteur'],
 			"titre"=>$data['titre'], 
 			"contenu"=>$data['contenu'], 
-			"date_creation_cplt"=>$data['date_creation_cplt']);
+			"date_creation_cplt"=>$data['date_creation']);
 		$q->closeCursor();
 		return $recup;
 	}
@@ -116,14 +116,14 @@
 
 	function selectComment($id){
 		global $db;
-		$com = array();
+		$com = null;
 		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_com_cplt  FROM Commentaires WHERE id_billet = ?');
 			$data = $q->execute(array($_GET['id']));
 			while($data = $q->fetch()){
-				$com[] = array("auteur"=>$data['auteur'],
+				$com = array("auteur"=>$data['auteur'],
 				"titre"=>$data['titre'], 
 				"commentaire"=>$data['commentaire'], 
-				"date_com_cplt"=>$data['date_com_cplt']);
+				"date_com_cplt"=>$data['date_commentaire']);
 			}
 		$q->closeCursor();
 		return $com;

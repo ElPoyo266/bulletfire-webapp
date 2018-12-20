@@ -17,8 +17,9 @@
                     foreach($param['ticket'] as $ticket):
 					?>
 					<a href="<?= PATH . '/forum/post/' . $ticket['id'] ?>">
-                        <h3><?= htmlspecialchars($ticket['titre'])?></h3>
-                        <p><?= $ticket['date_billet_cplt'] . ' ' . htmlspecialchars($ticket['contenu']) ?></p>
+                        <h3><?= htmlspecialchars($ticket['titre']) ?></h3>
+                        <h4><?= htmlspecialchars($ticket['auteur']) ?></h4>
+                        <p><?= $ticket['date_creation_cplt'] . ' ' . htmlspecialchars($ticket['contenu']) ?></p>
 				    </a>
                     <?php 
                     endforeach;
