@@ -92,7 +92,7 @@
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
-		$view = new Template("Forum:all", array('ticket'=> $envoi));
+		$view = new Template("Forum:cat", array('ticket'=> $envoi));
 		return $view->showTime();
 	}
 
@@ -124,6 +124,12 @@
 		$view = new Template("Global:comment-view", array('ticket'=> $ticket, 'comment'=>$comment, 'error'=>$taberror));
 		return $view->showTime();
 
+	}
+
+	public function forumHome () {
+		$cats = ["Communauté", "Recherche de squad"];
+		$view = new Template("Forum:home", array("cat" => $cats));
+		return $view->showTime();
 	}
 
 

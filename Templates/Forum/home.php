@@ -14,11 +14,10 @@
 			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
 			<div class="ticket-view">
 					<?php
-                    foreach($param['ticket'] as $ticket):
+                    foreach($param['cat'] as $cat):
 					?>
-					<a href="<?= PATH . '/forum/post/' . $ticket['id'] ?>">
-                        <h3><?= htmlspecialchars($ticket['titre'])?></h3>
-                        <p><?= $ticket['date_billet_cplt'] . ' ' . htmlspecialchars($ticket['contenu']) ?></p>
+					<a href="<?= PATH . '/forum/' . $cat ?>">
+                        <h4><?= $cat ?></h4>
 				    </a>
                     <?php 
                     endforeach;
