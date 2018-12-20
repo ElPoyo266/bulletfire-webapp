@@ -102,6 +102,7 @@
 
 	public function CommentPost($id){
 		// Recuperation du post et des commentaires
+		echo "Id : " . $id;
 		$ticket = array();
 		$comment = array();
 		$ticket = selectTicketbyId($id);

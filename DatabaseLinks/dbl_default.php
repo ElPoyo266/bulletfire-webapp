@@ -104,7 +104,8 @@
 		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_billet, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet WHERE id = ? ORDER BY date_creation DESC');
 		$q->execute([htmlspecialchars($id)]);
 		$data = $q->fetch();
-		$recup = array("auteur"=>$data['auteur'],
+		$recup = array(
+			"auteur"=>$data['auteur'],
 			"titre"=>$data['titre'], 
 			"contenu"=>$data['contenu'], 
 			"date_creation_cplt"=>$data['date_creation']);
