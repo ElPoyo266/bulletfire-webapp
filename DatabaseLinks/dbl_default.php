@@ -101,7 +101,7 @@
 	function selectTicketById($id){
 		global $db;
 		$recup = null;
-		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_billet, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet WHERE id = ? ORDER BY date_creation DESC');
+		$q = $db->prepare("SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation FROM Billet WHERE id = ? ORDER BY date_creation DESC");
 		$q->execute([htmlspecialchars($id)]);
 		$data = $q->fetch();
 		$recup = array(
