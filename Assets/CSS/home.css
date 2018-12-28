@@ -1,0 +1,58 @@
+main .backimg {
+	width : 100%;
+	opacity: 0.5;
+}
+
+main .titleimg {
+	width : 80%;
+}
+
+main div span {
+	position : absolute;
+	top : 50%; left : 50%;
+	transform: translate(-50%, -50%);
+	width : 70%;
+	text-align: center;
+}
+
+main div span a {
+	display: flex;
+	align-items: center;
+	width : 300px;
+	height : 65px;
+	background: orange;
+	border-radius: 30px;
+	font-size: 20px;
+	text-align: center;
+}
+
+main div span strong {
+	margin-right: 15px;
+	font-weight: normal;
+}
+
+main div span a img {
+	width : 30px; height : 30px;
+	margin-left: 15px;
+	margin-right: 10px;
+}
+
+main div span div {
+	margin : auto;
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+	width : 100%;
+}
+
+.win {
+	background: #1251b7;
+}
+
+.mac {
+	background: #7212b7;
+}
+
+.lin {
+
+}

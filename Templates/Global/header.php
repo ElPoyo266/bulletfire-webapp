@@ -1,7 +1,7 @@
 <header>
     <a href="<?= PATH . "/" ?>">
         <div class="left">
-            <img src="#">
+            <img src="<?= ASSET . 'Pics/logo.png' ?>">
             <h1>Bulletfire</h1>
         </div>    
     </a>
