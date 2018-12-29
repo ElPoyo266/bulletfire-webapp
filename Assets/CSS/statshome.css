@@ -1,0 +1,30 @@
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+main span {
+	display: inline-block;
+	width : 600px;
+	text-align: center;
+	background: #252525;
+	box-shadow: 0 0 5px 0 black;
+	height: 600px;
+	margin: 50px 0;
+	position: relative;
+}
+
+main span img {
+	position: absolute;
+	top : 0; right : 0; bottom : 0; left : 0;
+}
+
+main span h3 {
+	position: absolute;
+	bottom : 50px;
+	text-align: center;
+	left : 0; right : 0;
+}

@@ -26,12 +26,12 @@
 							</a>
 
 							<a href="#" class="mac">
-								<img src="<?= ASSET . 'Pics/windowsplat.png' ?>">
+								<img src="<?= ASSET . 'Pics/macplat.png' ?>">
 								<strong>Download Launcher for mac</strong>
 							</a>
 
 							<a href="#" class="lin">
-								<img src="<?= ASSET . 'Pics/windowsplat.png' ?>">
+								<img src="<?= ASSET . 'Pics/linuxplat.png' ?>">
 								<strong>Download Launcher for linux</strong>
 							</a>
 						</div>	

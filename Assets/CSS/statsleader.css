@@ -1,0 +1,41 @@
+main {
+	display: flex;
+	flex-direction: column;
+}
+
+main span {
+	display: flex;
+	width : 100%;
+	border-bottom: solid 1px white;
+	border-top: solid 1px white;
+	justify-content: space-between;
+	align-items: center;
+	height : 50px;
+}
+
+main span:hover {
+	background: #353535;
+}
+
+main span strong {
+	margin-left: 30px;
+	width : 150px;
+}
+
+main span h3 {
+	font-size : 20px;
+}
+
+main span i {
+	font-style: normal;
+	font-size: 18px;
+	width : 150px;
+	text-align: right;
+	margin-right: 30px;
+}
+
+h2 {
+	margin-left: 25px;
+	font-size : 35px;
+	text-align: center;
+}
