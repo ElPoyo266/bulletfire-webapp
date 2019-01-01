@@ -27,7 +27,7 @@
 			</div>
 			<div class="ticket_creation">
 			<h1><?= ' '/*$translate->translate('Ticket creation');*/ ?></h1>
-			<form action="" method="post">
+			<form action="newpost" method="post">
 				<label for="auteur">Auteur</label>
 				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
 				<label for="titre">Titre</label>

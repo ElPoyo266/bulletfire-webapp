@@ -91,6 +91,7 @@
 		$id_cat_bd = array($nom_cat);
 		$envoi = array();
 		$envoi = selectTicket($id_cat_bd);
+		$this->ticketCreation();
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
