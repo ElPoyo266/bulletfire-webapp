@@ -71,7 +71,7 @@
 		$taberror = array();
 		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu'])))
 		{
-			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $_GET['idCat']);
+			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $idCat);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
