@@ -53,7 +53,7 @@
 
 
 
-	function insertNewTicket($auteur, $titre, $contenu){
+	function insertNewTicket($auteur, $titre, $contenu, $idCat){
 		global $db;
 		$verif=false;
 		$q = $db->prepare('SELECT titre FROM Billet');
@@ -67,8 +67,8 @@
 		}
 		if ($verif === false) {
 			$q->closeCursor();
-			$q = $db->prepare("INSERT INTO Billet(auteur, titre, contenu) VALUES (?, ?, ?)");
-			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu)]);
+			$q = $db->prepare("INSERT INTO Billet(auteur, titre, contenu, id_categorie) VALUES (?, ?, ?, ?)");
+			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu), htmlspecialchars($id_categorie)]);
 		}
 
 	}

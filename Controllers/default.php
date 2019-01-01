@@ -68,9 +68,9 @@
 	public function ticketCreation(){
 	//Est-ce que tous les champs sont remplis ?
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
+		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']) and isset($_GET['idCat']))
 		{
-			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu']);
+			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $_GET['idCat']);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
@@ -78,7 +78,7 @@
 					$taberror[] = array("Votre sujet a été inséré avec succès.");
 				}
 		}
-		$view = new Template("Global:ticket-creation", array('error'=>$taberror));
+		$view = new Template("Forum:cat", array('error'=>$taberror));
 		return $view->showTime();
 	}	
 
