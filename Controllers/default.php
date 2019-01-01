@@ -65,7 +65,7 @@
 
 
 
-	public function ticketCreation(){
+	public function ticketCreation($idCat){
 	//Est-ce que tous les champs sont remplis ?
 		$idCat;
 		$taberror = array();
