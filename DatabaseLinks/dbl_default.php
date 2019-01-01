@@ -78,12 +78,13 @@
 
 
 
-	function selectTicket(){
+	function selectTicket($id_cat){
 		global $db;
-		$recup = null;
-		$q = $db->query('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet ORDER BY date_creation DESC');
+		$recup = array();
+		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet WHERE id_categorie = ? ORDER BY date_creation DESC');
+		$q->execute([htmlspecialchars($id)]);
 		while($data = $q->fetch()){
-			$recup = array("id"=>$data['id'],
+			$recup[] = array("id"=>$data['id'],
 					"auteur"=>$data['auteur'], 
 					"titre"=>$data['titre'], 
 					"contenu"=>$data['contenu'], 

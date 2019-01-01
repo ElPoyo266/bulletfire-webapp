@@ -86,9 +86,9 @@
 
 
  
-	public function recupTicket($id){
+	public function recupTicket($id_cat){
 		$envoi = array();
-		$envoi = selectTicket();
+		$envoi = selectTicket($id_cat);
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
@@ -100,12 +100,12 @@
 
 
 
-	public function CommentPost($id){
+	public function CommentPost($id_post){
 		// Recuperation du post et des commentaires
 		$ticket = array();
 		$comment = array();
-		$ticket = selectTicketbyId($id);
-		$comment = selectComment($id);
+		$ticket = selectTicketbyId($id_post);
+		$comment = selectComment($id_post);
 
 		// Ajout d'un commentaire
 		$taberror = array();
