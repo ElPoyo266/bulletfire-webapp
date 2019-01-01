@@ -69,7 +69,7 @@
 	//Est-ce que tous les champs sont remplis ?
 		$idCat;
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu'])))
+		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
 			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $idCat);
 				if (isset($error)) {
