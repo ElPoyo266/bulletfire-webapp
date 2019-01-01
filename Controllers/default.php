@@ -93,7 +93,7 @@
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
-		$view = new Template("Forum:cat", array('ticket'=> $envoi));
+		$view = new Template("Forum:cat", array('ticket'=> $envoi, 'categorie'=> $nom_cat));
 		return $view->showTime();
 	}
 
