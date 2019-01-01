@@ -82,7 +82,7 @@
 		global $db;
 		$recup = array();
 		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_cplt FROM Billet WHERE id_categorie = ? ORDER BY date_creation DESC');
-		$q->execute([htmlspecialchars($id)]);
+		$q->execute([htmlspecialchars($id_cat)]);
 		while($data = $q->fetch()){
 			$recup[] = array("id"=>$data['id'],
 					"auteur"=>$data['auteur'], 
