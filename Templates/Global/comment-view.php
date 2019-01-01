@@ -28,7 +28,7 @@
 				<h4>
 				<?php
 					foreach($param['comment'] as $comment){
-						echo'<p> le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'] . 'par' . $comment['auteur'] . '</p>';
+						echo'<p> le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'] . ' ' . $comment['auteur'] . '</p>';
 					} 						
 				?>
 				</h4>
