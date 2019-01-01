@@ -26,7 +26,7 @@
                     ?>
 			</div>
 			<div class="ticket_creation">
-			<form action="newpost" method="post">
+			<form action="" method="post">
 				<label for="auteur">Auteur</label>
 				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
 				<label for="titre">Titre</label>

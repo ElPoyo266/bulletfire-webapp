@@ -39,7 +39,6 @@
 				<br/>
 				</p>
 				</div>
-			<h1><?= ' '/*$translate->translate('Comment creation');*/ ?></h1>
 			<form action="" method="post">
                 <label for="contenu">Auteur</label>
 				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
