@@ -132,10 +132,10 @@
 	}
     
 
-	function insertNewComment($id_billet, $titre, $contenu){
+	function insertNewComment($id_billet, $titre, $commentaire){
 		global $db;
 		$q = $db->prepare("INSERT INTO Commentaires(id_billet, auteur, commentaire) VALUES (?, ?, ?)");
-		$q->execute([htmlspecialchars($id_billet),htmlspecialchars($auteur),htmlspecialchars($contenu)]);
+		$q->execute([htmlspecialchars($id_billet),htmlspecialchars($auteur),htmlspecialchars($commentaire)]);
 		$q->closeCursor();
 	}
 	
