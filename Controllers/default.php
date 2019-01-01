@@ -86,9 +86,11 @@
 
 
  
-	public function recupTicket($id_cat){
+	public function recupTicket($nom_cat){
+		$nom_cat = array("communaute"=> 1, "rechercheSquad"=> 2);
+		$id_cat_bd = array($nom_cat);
 		$envoi = array();
-		$envoi = selectTicket($id_cat);
+		$envoi = selectTicket($id_cat_bd);
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
@@ -127,7 +129,7 @@
 	}
 
 	public function forumHome () {
-		$cats = ["Communauté", "Recherche de squad"];
+		$cats = ["communaute", "rechercheSquad"];
 		$view = new Template("Forum:home", array("cat" => $cats));
 		return $view->showTime();
 	}
