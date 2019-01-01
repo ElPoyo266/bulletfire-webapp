@@ -16,7 +16,7 @@
 				<div class="ticket">
 				<?php
 					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
-					echo'<p>' . $param['ticket']['date_creation_cplt'] . '</p>';
+					echo'<p>' . $param['ticket']['date_creation_cplt'] . ' ' . $param['ticket']['auteur'] . '</p>';
 				?>
 				<p>
 				<?php
@@ -28,7 +28,7 @@
 				<h4>
 				<?php
 					foreach($param['comment'] as $comment){
-						echo'<p> le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'] . '</p>';
+						echo'<p> le ' . $comment['date_commentaire'] . ' à ' . $comment['heure_commentaire'] . 'par' . $comment['auteur'] . '</p>';
 					} 						
 				?>
 				</h4>
