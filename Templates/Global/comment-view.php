@@ -20,7 +20,7 @@
 				?>
 				<p>
 				<?php
-					echo htmlspecialchars($param['contenu']);
+					echo htmlspecialchars($param['ticket']['contenu']);
 				?>
 				</p>
 				</div>
