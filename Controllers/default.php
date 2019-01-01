@@ -110,9 +110,9 @@
 
 		// Ajout d'un commentaire
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
+		if (isset($_POST['auteur']) and isset($_POST['commentaire']) and isset($_GET['idPost']))
 		{
-			insertNewComment($_POST['auteur'], $_POST['commentaire']);
+			insertNewComment($_GET['idPost'], $_POST['auteur'], $_POST['commentaire']);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
