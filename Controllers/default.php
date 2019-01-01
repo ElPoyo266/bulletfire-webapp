@@ -85,8 +85,8 @@
 
  
 	public function recupTicket($nom_cat){
-		$nom_cat = array("communaute"=> 1, "rechercheSquad"=> 2);
-		$id_cat_bd = array($nom_cat);
+		$tab_cat = array("communaute"=> 1, "rechercheSquad"=> 2);
+		$id_cat_bd = $tab_cat($nom_cat);
 		$envoi = array();
 		$envoi = selectTicket($id_cat_bd);
 		$this->ticketCreation();
