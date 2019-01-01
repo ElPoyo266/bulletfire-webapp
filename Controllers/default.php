@@ -67,8 +67,9 @@
 
 	public function ticketCreation(){
 	//Est-ce que tous les champs sont remplis ?
+		$idCat;
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']) and isset($_GET['idCat']))
+		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu'])))
 		{
 			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $_GET['idCat']);
 				if (isset($error)) {
@@ -89,7 +90,7 @@
 		$id_cat_bd = $tab_cat[$nom_cat];
 		$envoi = array();
 		$envoi = selectTicket($id_cat_bd);
-		$this->ticketCreation();
+		$this->ticketCreation($id_cat_bd);
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}

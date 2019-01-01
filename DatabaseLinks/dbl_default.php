@@ -68,7 +68,7 @@
 		if ($verif === false) {
 			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Billet(auteur, titre, contenu, id_categorie) VALUES (?, ?, ?, ?)");
-			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu), htmlspecialchars($id_categorie)]);
+			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu), htmlspecialchars($idCat)]);
 		}
 
 	}
