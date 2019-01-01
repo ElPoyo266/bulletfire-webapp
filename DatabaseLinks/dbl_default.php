@@ -120,7 +120,7 @@
 		global $db;
 		$com = array();
 		$q = $db->prepare('SELECT titre, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_com_cplt  FROM Commentaires WHERE id_billet = ?');
-			$data = $q->execute(array($_GET['id']));
+			$data = $q->execute($id);
 			while($data = $q->fetch()){
 				$com[] = array("auteur"=>$data['auteur'],
 				"titre"=>$data['titre'], 
