@@ -78,8 +78,6 @@
 					$taberror[] = array("Votre sujet a été inséré avec succès.");
 				}
 		}
-		$view = new Template("Forum:cat", array('error'=>$taberror));
-		return $view->showTime();
 	}	
 
 
