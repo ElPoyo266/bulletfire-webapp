@@ -67,7 +67,6 @@
 
 	public function ticketCreation($idCat){
 	//Est-ce que tous les champs sont remplis ?
-		$idCat;
 		$taberror = array();
 		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
@@ -111,9 +110,10 @@
 
 		// Ajout d'un commentaire
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['commentaire']) and isset($_GET['idPost']))
+		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
 		{
-			insertNewComment($_GET['idPost'], $_POST['auteur'], $_POST['commentaire']);
+
+			insertNewComment($_GET['idPost'], $_POST['auteur'], $_POST['commentaire'], $id_post);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
