@@ -12,7 +12,6 @@
 		<body>
 			<?php require("Templates/Global/header.php") ?>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
-                <h2><a><?= ' '/*theme a recup en bdd*/ ?></a></h2>
 				<div class="ticket">
 				<?php
 					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
