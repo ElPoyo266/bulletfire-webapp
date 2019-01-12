@@ -66,7 +66,7 @@
 
 
 	public function ticketCreation($idCat){
-	//Est-ce que tous les champs sont remplis ?
+	//Ajout d'un ticket (Billet)
 		$taberror = array();
 		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
@@ -98,17 +98,8 @@
 	}
 
 
-
-
-
-	public function CommentPost($id_post){
-		// Recuperation du post et des commentaires
-		$ticket = array();
-		$comment = array();
-		$ticket = selectTicketbyId($id_post);
-		$comment = selectComment($id_post);
-
-		// Ajout d'un commentaire
+	public function commentCreation($id){
+	// Ajout d'un commentaire
 		$taberror = array();
 		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
 		{
@@ -121,8 +112,19 @@
 					$taberror[] = array("Votre commentaire a bien été pris en compte.");
 				}
 		}
+	}	
 
 
+	public function CommentPost($id_post){
+		// Recuperation du post et des commentaires
+		$ticket = array();
+		$comment = array();
+		$ticket = selectTicketbyId($id_post);
+		$comment = selectComment($id_post);
+		$this->commentCreation($id_post);
+		if(isset($error)){
+			echo '<p>'.$error.'</p>';
+		}
 		$view = new Template("Global:comment-view", array('ticket'=> $ticket, 'comment'=>$comment, 'error'=>$taberror));
 		return $view->showTime();
 
