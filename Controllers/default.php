@@ -125,7 +125,7 @@
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
-		$view = new Template("Global:comment-view", array('ticket'=> $ticket, 'comment'=>$comment, 'error'=>$taberror));
+		$view = new Template("Global:comment-view", array('ticket'=> $ticket, 'comment'=>$comment));
 		return $view->showTime();
 
 	}
