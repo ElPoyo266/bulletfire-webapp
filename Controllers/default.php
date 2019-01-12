@@ -113,7 +113,7 @@
 		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
 		{
 
-			insertNewComment($_GET['idPost'], $_POST['auteur'], $_POST['commentaire'], $id_post);
+			insertNewComment($_POST['auteur'], $_POST['commentaire'], $id_post);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
