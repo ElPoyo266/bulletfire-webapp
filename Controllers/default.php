@@ -104,7 +104,7 @@
 		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
 		{
 
-			insertNewComment($id_post, $_POST['auteur'], $_POST['commentaire']);
+			insertNewComment($id, $_POST['auteur'], $_POST['commentaire']);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
