@@ -40,9 +40,9 @@
                     </label>
                     <input style="display : none" type="checkbox" name="condition" id="condition"  title="Ce champs est obligatoire." required checked><!--J'accepte les termes et conditions d'utilisations<br>-->
                     <input style="display : none" type="checkbox" name="newsletter" id="newsletter"><!--Je veux m'inscrire à la newsletter<br>-->
-                    
+                    <button type="submit" class="button">Créer un compte</button>
                 </span>
-                <button type="submit" class="button">Créer un compte</button>
+                
                 
             </form>
 
