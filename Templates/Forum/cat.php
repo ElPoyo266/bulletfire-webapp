@@ -28,8 +28,6 @@
 			</div>
 			<div class="ticket_creation">
 			<form action="" method="post">
-				<label for="auteur">Auteur</label>
-				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
 				<label for="titre">Titre</label>
                 <input type="text" name="titre" id="titre" placeholder="Entrer votre titre de post"></textarea>
                 <label for="contenu">Contenu</label>

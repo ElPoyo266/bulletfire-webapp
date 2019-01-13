@@ -68,9 +68,11 @@
 	public function ticketCreation($idCat){
 	//Ajout d'un ticket (Billet)
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['titre']) and isset($_POST['contenu']))
+		$player = $_SESSION["Player"];
+		if ($player!=null and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
-			insertNewTicket($_POST['auteur'], $_POST['titre'], $_POST['contenu'], $idCat);
+			$nomPlayer = $player->getNickname();
+			insertNewTicket($nomPlayer, $_POST['titre'], $_POST['contenu'], $idCat);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
@@ -101,10 +103,12 @@
 	public function commentCreation($id){
 	// Ajout d'un commentaire
 		$taberror = array();
-		if (isset($_POST['auteur']) and isset($_POST['commentaire']))
+		$player = $_SESSION["Player"];
+		
+		if ($player!=null and isset($_POST['commentaire']))
 		{
-
-			insertNewComment($id, $_POST['auteur'], $_POST['commentaire']);
+			$nomPlayer = $player->getNickname();
+			insertNewComment($id, $nomPlayer, $_POST['commentaire']);
 				if (isset($error)) {
 					$taberror[] = array($error);
 				}
@@ -120,8 +124,8 @@
 		$ticket = array();
 		$comment = array();
 		$ticket = selectTicketbyId($id_post);
-		$comment = selectComment($id_post);
 		$this->commentCreation($id_post);
+		$comment = selectComment($id_post);
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}

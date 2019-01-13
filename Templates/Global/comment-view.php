@@ -39,8 +39,6 @@
 				</p>
 				</div>
 			<form action="" method="post">
-                <label for="contenu">Auteur</label>
-				<input type="text" name="auteur" id="auteur" placeholder="Entrer votre nickname">
 				<label for="titre">Commentaire</label>
                 <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>
 				<br>
