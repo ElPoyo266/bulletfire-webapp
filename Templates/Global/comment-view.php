@@ -28,13 +28,11 @@
 				<?php
 					foreach($param['comment'] as $comment){
 						echo'<p> le ' . $comment['date_com_cplt'] . ' ' . $comment['auteur'] . '</p>';
+						echo htmlspecialchars($comment['commentaire']);
 					} 						
 				?>
 				</h4>
 				<p>
-				<?php
-					echo htmlspecialchars($comment['commentaire']);
-				?>
 				<br/>
 				</p>
 				</div>
