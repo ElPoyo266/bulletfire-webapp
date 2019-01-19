@@ -13,6 +13,7 @@
 			<?php require("Templates/Global/header.php") ?>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
 				<div class="ticket">
+				<table>
 				<?php
 					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
 					echo'<p>' . $param['ticket']['date_creation_cplt'] . ' ' . $param['ticket']['auteur'] . '</p>';
