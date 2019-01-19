@@ -81,7 +81,7 @@
 	function selectTicket($id_cat){
 		global $db;
 		$recup = array();
-		$q = $db->prepare('SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation FROM Billet WHERE id_categorie = ? ORDER BY date_creation DESC');
+		$q = $db->prepare("SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, ' %d %M %Y - %Hh%imin%ss') AS date_creation FROM Billet WHERE id_categorie = ? ORDER BY date_creation DESC");
 		$q->execute([htmlspecialchars($id_cat)]);
 		while($data = $q->fetch()){
 			$recup[] = array(
@@ -103,7 +103,7 @@
 	function selectTicketById($id){
 		global $db;
 		$recup = null;
-		$q = $db->prepare("SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, '%d/%m/%Y à %Hh%imin%ss') AS date_creation FROM Billet WHERE id = ? ORDER BY date_creation DESC");
+		$q = $db->prepare("SELECT id, titre, auteur, contenu, DATE_FORMAT(date_creation, ' %d %M %Y - %Hh%imin%ss') AS date_creation FROM Billet WHERE id = ? ORDER BY date_creation DESC");
 		$q->execute([htmlspecialchars($id)]);
 		$data = $q->fetch();
 		$recup = array(

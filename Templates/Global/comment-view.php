@@ -5,24 +5,19 @@
 			<?php require("Templates/Global/head.php") ?>
 			<title><?= ' ' /*$translate->translate('Topic');*/ ?></title>
 			<!-- The constant ASSET allows you to access the Assets folder to get your css or js files or your images -->
-			<link rel="stylesheet" type="text/css" href="<?= ASSET . 'Styles/home.css' ?>">
+			<link rel="stylesheet" type="text/css" href="<?= ASSET . 'CSS/home.css' ?>">
 
 		</head>
 		 
 		<body>
 			<?php require("Templates/Global/header.php") ?>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
-				<div class="ticket">
-				<table>
+            <div class="post-comment">
 				<?php
-					echo'<h3>' . $param['ticket']['titre'] . '</h3>';
-					echo'<p>' . $param['ticket']['date_creation_cplt'] . ' ' . $param['ticket']['auteur'] . '</p>';
+					echo'<h1 class="titre_date">' . $param['ticket']['titre'].' - '.$param['ticket']['date_creation_cplt'].'</h1>';
+					echo'<p class ="auteur">' . $param['ticket']['auteur'] .'</p>';
+					echo '<p class="contenu">'.htmlspecialchars($param['ticket']['contenu']).'</p>';
 				?>
-				<p>
-				<?php
-					echo htmlspecialchars($param['ticket']['contenu']);
-				?>
-				</p>
 				</div>
 				<div class="comment">
 				<h4>

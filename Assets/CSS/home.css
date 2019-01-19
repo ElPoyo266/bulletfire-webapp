@@ -56,3 +56,43 @@ main div span div {
 .lin {
 
 }
+
+h1 {
+
+}
+
+
+
+h3{
+
+
+}
+h4{
+    
+}
+.ticket-post{
+
+}
+
+.post-comment{
+	
+}
+
+.titre_date{
+    font-size: 35px;
+    color: white;
+
+}
+
+.auteur{
+	padding-left: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contenu{
+	font-size: 17px;
+	padding-left: 30px;
+	color:#C0C0C0	;
+}
