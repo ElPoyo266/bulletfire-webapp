@@ -21,7 +21,6 @@
 				?>
 				</div>
 				<div class="comment">
-				<h4>
 				<?php
 					foreach($param['comment'] as $comment){
 						echo'<p class="date">' . $comment['date_com_cplt'].'</p>';
@@ -29,7 +28,6 @@
 						echo '<p class="contenu">'. htmlspecialchars($comment['commentaire']).'</p>';
 					} 						
 				?>
-				</h4>
 				<p>
 				<br/>
 				</p>
