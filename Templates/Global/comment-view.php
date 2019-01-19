@@ -14,7 +14,8 @@
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
             <div class="post-comment">
 				<?php
-					echo'<h1 class="titre_date">' . $param['ticket']['titre'].' - '.$param['ticket']['date_creation_cplt'].'</h1>';
+					echo'<h1>' . $param['ticket']['titre'].' </h1> ';
+					echo'<p class="date">'.$param['ticket']['date_creation_cplt'].'</p>';
 					echo'<p class ="auteur">' . $param['ticket']['auteur'] .'</p>';
 					echo '<p class="contenu">'.htmlspecialchars($param['ticket']['contenu']).'</p>';
 				?>
@@ -23,8 +24,9 @@
 				<h4>
 				<?php
 					foreach($param['comment'] as $comment){
-						echo'<p> le ' . $comment['date_com_cplt'] . ' ' . $comment['auteur'] . '</p>';
-						echo '<p>'. htmlspecialchars($comment['commentaire']).'</p>';
+						echo'<p class="date">' . $comment['date_com_cplt'].'</p>';
+						echo '<p class ="auteur">' . $comment['auteur'].'</p>' ;
+						echo '<p class="contenu">'. htmlspecialchars($comment['commentaire']).'</p>';
 					} 						
 				?>
 				</h4>

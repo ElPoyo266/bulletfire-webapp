@@ -120,7 +120,7 @@
 	function selectComment($id){
 		global $db;
 		$com = array();
-		$q = $db->prepare('SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment  FROM Commentaires WHERE id_billet = ?');
+		$q = $db->prepare("SELECT auteur, commentaire, DATE_FORMAT(date_commentaire, ' %d %M %Y - %Hh%imin%ss') AS date_comment  FROM Commentaires WHERE id_billet = ?");
 			$data = $q->execute([htmlspecialchars($id)]);
 			while($data = $q->fetch()){
 				$com[] = array(

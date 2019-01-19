@@ -57,10 +57,6 @@ main div span div {
 
 }
 
-h1 {
-
-}
-
 
 
 h3{
@@ -75,12 +71,11 @@ h4{
 }
 
 .post-comment{
-	
+
 }
 
-.titre_date{
+h1{
     font-size: 35px;
-    color: white;
 
 }
 
@@ -94,5 +89,12 @@ h4{
 .contenu{
 	font-size: 17px;
 	padding-left: 30px;
-	color:#C0C0C0	;
+	color:#C0C0C0;
+}
+
+.date{
+	padding-top: 50px;
+	font-size: 17px;
+	padding-left: 30px;
+	color: #696969;
 }
