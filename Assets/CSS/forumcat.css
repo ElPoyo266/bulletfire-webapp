@@ -1,4 +1,7 @@
-
+ p {
+    padding-left:20px;
+    font-weight: bold;
+}
 
 .ticket-view h4{
 
@@ -28,4 +31,13 @@
 
 .ticket-view a p {
     margin-right : 50px; margin-left : 50px;
+}
+
+
+#titre{
+    position: relative;
+}
+
+#contenu{
+
 }

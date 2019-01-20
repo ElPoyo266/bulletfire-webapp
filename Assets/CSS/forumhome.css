@@ -1,0 +1,42 @@
+
+.ticket-view a h4 p{
+	margin-left: 30px;
+
+}
+
+.ticket-view a{
+	position:absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+}
+
+table tr td{
+	border: 1px white solid;
+	box-shadow: 3px 3px 3px ;
+	position: relative;
+	margin-left:200px; 
+	margin-right: auto;
+
+
+	
+}
+
+tr:hover{
+	background-color: #808080;
+}
+
+td{
+	width: 600px;
+}
+
+body{
+	text-align: center;
+}
+
+#contenu{
+	margin:0 auto;
+	display: inline-block;
+}

@@ -12,17 +12,23 @@
 		<body>
 			<?php require("Templates/Global/header.php") ?>
 			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
-			<div class="ticket-view">
+			<div id="contenu">
+			<table >
 					<?php
                     foreach($param['cat'] as $cat):
 					?>
-					<a href="<?= PATH . '/forum/' . $cat ?>">
-                        <h4><?= $cat ?></h4>
+					<tr><td>
+					<a href="<?= PATH . '/forum/' . $cat[0] ?>">
+                        <h4><?= $cat[0] ?></h4>
+                        <p><?= $cat[1] ?></p>
 				    </a>
+				    </td></tr>
+					<br/>
                     <?php 
                     endforeach;
                     ?>
-			</div>
+			</table>
+		</div>
 
 		</body>
     </html>

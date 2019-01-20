@@ -87,7 +87,7 @@
 
  
 	public function recupTicket($nom_cat){
-		$tab_cat = array("communaute"=> 1, "rechercheSquad"=> 2);
+		$tab_cat = array("Communauté"=> 1, "Recherche De Groupe"=> 2);
 		$id_cat_bd = $tab_cat[$nom_cat];
 		$envoi = array();
 		$envoi = selectTicket($id_cat_bd);
@@ -135,7 +135,8 @@
 	}
 
 	public function forumHome () {
-		$cats = ["communaute", "rechercheSquad"];
+		$cats = [["Communauté", "Restez en contact avec l'ensemble de la communauté en vous exprimant sur des aspects du jeu (ou non)" ], ["Recherche De Groupe", "Rejoignez des groupes de joueurs qui correspondent à votre niveau en adhérant à des groupes ou en proposant vos services"]];
+
 		$view = new Template("Forum:home", array("cat" => $cats));
 		return $view->showTime();
 	}

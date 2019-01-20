@@ -12,7 +12,7 @@
 		<body>
 			<?php require("Templates/Global/header.php") ?>
 			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
-			<h4><?= $param['categorie']?></h4>
+			<p><?= $param['categorie']?></p>
 			<div class="ticket-view">
 					<?php
                     foreach($param['ticket'] as $ticket):
@@ -29,7 +29,7 @@
 			<div class="ticket_creation">
 			<form action="" method="post">
 				<label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre" placeholder="Entrer votre titre de post"></textarea>
+                <input type="text" name="titre" id="titre" placeholder="Entrer votre titre"></textarea>
                 <label for="contenu">Contenu</label>
                 <textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
 				<br>
