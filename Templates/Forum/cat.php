@@ -34,7 +34,7 @@
                 	<div class="nomContenu"><label for="contenu">Contenu</label></div>
                 	<textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
 					<br>
-                	<div class="button"><input type="submit" value="Valider"></div>
+                	<div class="buttonSub"><input type="submit" value="Valider"></div>
 					<?php
 						echo $param['error'];
 					?>
