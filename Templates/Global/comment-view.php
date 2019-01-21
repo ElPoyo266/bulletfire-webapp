@@ -12,26 +12,29 @@
 		<body>
 			<?php require("Templates/Global/header.php") ?>
             <h1><?= ' '/*categorie a recup en bdd*/ ?></h1>
-            <div class="post-comment">
-				<?php
-					echo'<h1>' . $param['ticket']['titre'].' </h1> ';
-					echo'<p class="date">'.$param['ticket']['date_creation_cplt'].'</p>';
-					echo'<p class ="auteur">' . $param['ticket']['auteur'] .'</p>';
-					echo '<p class="contenu">'.htmlspecialchars($param['ticket']['contenu']).'</p>';
-				?>
+            <section>
+            	<div class="post-comment">
+					<?php
+						echo'<h1>' . $param['ticket']['titre'].' </h1> ';
+						echo'<p class="date">'.$param['ticket']['date_creation_cplt'].'</p>';
+						echo'<p class ="auteur">' . $param['ticket']['auteur'] .'</p>';
+						echo '<p class="contenu">'.htmlspecialchars($param['ticket']['contenu']).'</p>';
+					?>
 				</div>
-				<div class="comment">
+				<br>
+				<br>
+			</section>
 				<?php
 					foreach($param['comment'] as $comment){
+						echo '<div class="comment">';
+						echo '<section>';
 						echo'<p class="date">' . $comment['date_com_cplt'].'</p>';
 						echo '<p class ="auteur">' . $comment['auteur'].'</p>' ;
 						echo '<p class="contenu">'. htmlspecialchars($comment['commentaire']).'</p>';
+						echo '</section>';
+						echo '</div>';
 					} 						
 				?>
-				<p>
-				<br/>
-				</p>
-				</div>
 			<form action="" method="post">
 				<label for="titre">Commentaire</label>
                 <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>

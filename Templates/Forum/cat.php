@@ -11,8 +11,9 @@
 		
 		<body>
 			<?php require("Templates/Global/header.php") ?>
-			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
-			<p><?= $param['categorie']?></p>
+			<h1><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h1>
+			<div class="titreCat"><h2><?= $param['categorie']?></h2></div>
+			<br>
 			<div class="ticket-view">
 					<?php
                     foreach($param['ticket'] as $ticket):
@@ -27,17 +28,17 @@
                     ?>
 			</div>
 			<div class="ticket_creation">
-			<form action="" method="post">
-				<label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre" placeholder="Entrer votre titre"></textarea>
-                <label for="contenu">Contenu</label>
-                <textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
-				<br>
-                <input type="submit" value="Valider">
-				<?php
-					echo $param['error'];
-				?>
-            </form>
+				<form action="" method="post">
+					<div class="nomTitre"><label for="titre">Titre</label></div>
+                	<input type="text" name="titre" id="titre" placeholder="Entrer votre titre"></textarea>
+                	<div class="nomContenu"><label for="contenu">Contenu</label></div>
+                	<textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
+					<br>
+                	<div class="button"><input type="submit" value="Valider"></div>
+					<?php
+						echo $param['error'];
+					?>
+            	</form>
 			</div>
 
 		</body>

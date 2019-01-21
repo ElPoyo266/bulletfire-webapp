@@ -10,9 +10,9 @@
 		</head>
 		
 		<body>
-			<?php require("Templates/Global/header.php") ?>
-			<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
-			<div id="contenu">
+		<?php require("Templates/Global/header.php") ?>
+		<h3><?= ' '/*$translate->translate('Ticket view');*/ ?>Forum</h3>
+		<div id="contenu">
 			<table >
 					<?php
                     foreach($param['cat'] as $cat):
