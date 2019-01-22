@@ -35,7 +35,7 @@
 						echo '</div>';
 					} 						
 				?>
-			<form action="" method="post">
+			<form method="post">
 				<div class="nomCom"><label for="commentaire">Commentaire</label></div>
                 <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>
 				<br>

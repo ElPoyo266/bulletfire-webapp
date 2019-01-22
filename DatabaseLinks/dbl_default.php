@@ -55,21 +55,8 @@
 
 	function insertNewTicket($auteur, $titre, $contenu, $idCat){
 		global $db;
-		$verif=false;
-		$q = $db->prepare('SELECT titre FROM Billet');
-	 	$q->execute();
-	 	while ($data = $q->fetch())
-		{
-		    if ($data === $titre) {
-		    	$verif = true;
-		    	return 'Erreur : Titre déjà existant. Merci de consulter les sujets.';
-		    }
-		}
-		if ($verif === false) {
-			$q->closeCursor();
 			$q = $db->prepare("INSERT INTO Billet(auteur, titre, contenu, id_categorie) VALUES (?, ?, ?, ?)");
 			$q->execute([htmlspecialchars($auteur), htmlspecialchars($titre),htmlspecialchars($contenu), htmlspecialchars($idCat)]);
-		}
 
 	}
 

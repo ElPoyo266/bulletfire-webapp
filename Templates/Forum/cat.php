@@ -28,18 +28,14 @@
                     ?>
 			</div>
 			<div class="ticket_creation">
-				<form action="" method="post">
+				<form method="post">
 					<div class="nomTitre"><label for="titre">Titre</label></div>
-                	<input type="text" name="titre" id="titre" placeholder="Entrer votre titre"></textarea>
+                	<input type="text" name="titre" id="titre" placeholder="Entrer votre titre">
                 	<div class="nomContenu"><label for="contenu">Contenu</label></div>
                 	<textarea name="contenu" id="contenu" placeholder="Entrer votre post"></textarea>
 					<br>
                 	<div class="buttonSub"><input type="submit" value="Valider"></div>
-					<?php
-						echo $param['error'];
-					?>
             	</form>
 			</div>
-
 		</body>
     </html>
