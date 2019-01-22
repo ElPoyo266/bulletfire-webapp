@@ -15,7 +15,7 @@
             <section>
             	<div class="post-comment">
 					<?php
-						echo'<h1>' . $param['ticket']['titre'].' </h1> ';
+						echo'<div class="titreh1"><h1>' . $param['ticket']['titre'].' </h1></div> ';
 						echo'<p class="date">'.$param['ticket']['date_creation_cplt'].'</p>';
 						echo'<p class ="auteur">' . $param['ticket']['auteur'] .'</p>';
 						echo '<p class="contenu">'.htmlspecialchars($param['ticket']['contenu']).'</p>';
@@ -36,10 +36,10 @@
 					} 						
 				?>
 			<form action="" method="post">
-				<label for="titre">Commentaire</label>
+				<div class="nomCom"><label for="commentaire">Commentaire</label></div>
                 <textarea name="commentaire" id="commentaire" placeholder="Entrer votre commentaire"></textarea>
 				<br>
-                <input type="submit" value="Envoyer">
+                <div class="buttonCom"><input type="submit" value="Envoyer"></div>
             </form>
 		</body>
 	</html>

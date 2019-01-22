@@ -64,6 +64,12 @@ h1{
 
 }
 
+.titreh1{
+	margin: auto;
+	padding-left: 80px;
+	width: 50%;
+}
+
 h3{
 
 
@@ -91,7 +97,6 @@ h4{
 
 .comment{
 	border-top: 2px solid grey;
-	border-bottom: 2px solid grey;
 	margin-top: 30px;
 	padding-left: 81px;
 	width: 80%;
@@ -118,4 +123,43 @@ h4{
 	font-size: 17px;
 	padding-left: 30px;
 	color: #696969;
+}
+
+/*---------------------------------------*/
+
+
+form{
+	width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+  	padding: 10px;
+}
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #808080;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #5A5E6B;
+}
+
+textarea#commentaire{
+	height: 200px;
 }
