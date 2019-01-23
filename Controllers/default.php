@@ -88,8 +88,9 @@
 		$tab_cat = array("Communauté"=> 1, "Recherche De Groupe"=> 2);
 		$id_cat_bd = $tab_cat[$nom_cat];
 		$envoi = array();
-		$envoi = selectTicket($id_cat_bd);
 		$this->ticketCreation($id_cat_bd);
+		$envoi = selectTicket($id_cat_bd);
+		
 		if(isset($error)){
 			echo '<p>'.$error.'</p>';
 		}
