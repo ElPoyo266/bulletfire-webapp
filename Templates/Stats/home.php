@@ -16,14 +16,14 @@
 			
 			<a href="<?= PATH . '/stats/leaderboard' ?>">
 				<span>
-					<img src="#">
+					<img src="<?= ASSET . 'Pics/leader.png' ?>">
 					<h3>Classement</h3>
 				</span>	
 			</a>
 
 			<a href="<?= PATH . '/stats/users' ?>">
 				<span>
-					<img src="#">
+					<img src="<?= ASSET . 'Pics/player.png' ?>">
 					<h3>Stats de joueur</h3>
 				</span>	
 			</a>

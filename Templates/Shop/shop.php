@@ -22,7 +22,7 @@
         ?>
             <div>
                 <h2><?= $p->getName()?></h2>
-                <img src="<?= $p->getPic()?>" alt="Pic">
+                <img src="<?= ASSET . 'Pics/' .$p->getPic()?>" alt="Pic">
                 <h3><?= $p->getDesc()?></h3>
                 <strong>Prix : <?= $p->getPrice()?></strong>
                 <?php if(isset($_SESSION["Player"])) : ?>

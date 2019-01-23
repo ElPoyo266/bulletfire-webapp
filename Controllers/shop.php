@@ -160,10 +160,10 @@
         /* ###  Private functions  ### */
         private function getProducts () {
             return [
-                new Product ("Poignée de billets", 1.99, "Obtenez 10 000 bills !", "", 1, 1),
-                new Product ("Sacoche de billets", 4.99, "Obtenez 50 000 bills !", "", 1, 2),
-                new Product ("Coffre", 0.99, "Obtenez 1 coffre !", "", 2, 3),
-                new Product ("Petit pack de coffre", 4.99, "Obtenez 10 coffres !", "", 2, 4),
+                new Product ("Poignée de billets", 1.99, "Obtenez 10 000 bills !", "bill.png", 1, 1),
+                new Product ("Sacoche de billets", 4.99, "Obtenez 50 000 bills !", "bills.png", 1, 2),
+                new Product ("Coffre", 0.99, "Obtenez 1 coffre !", "chest.png", 2, 3),
+                new Product ("Petit pack de coffre", 4.99, "Obtenez 10 coffres !", "chests.png", 2, 4),
             ];
         }
 
