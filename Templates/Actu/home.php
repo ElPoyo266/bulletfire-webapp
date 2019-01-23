@@ -15,13 +15,15 @@
 					<?php
                     foreach($param['actu'] as $actu):
 					?>
-					<a href="<?= PATH . '/actu/' . $actu->getId() ?>">
-						<div>
-							<img src="<?= ASSET . 'PICS/Articles/' . $actu->getPic() ?>">
+					<a href="<?= PATH . '/actu/' . $actu->getId() ?>" class="actu">
+						<div class="left">
+							<img src="<?= ASSET . 'Pics/Articles/' . $actu->getPic() ?>">
 							<h4><?= $actu->getTitle() ?></h4>
 						</div>
-						<strong><?= $actu->getCat() ?> by Bulletfire team</strong>
-						<i><?= $actu->getDate() ?></i>
+						<div class="right">
+							<strong><?= $actu->getCat() ?> by Bulletfire team</strong>
+							<i><?= $actu->getDate() ?></i>	
+						</div>
 				    </a>
                     <?php 
                     endforeach;

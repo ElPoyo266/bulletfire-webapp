@@ -20,8 +20,11 @@
 					?>
 					<a href="<?= PATH . '/forum/post/' . $ticket['id'] ?>">
                         <h3><?= htmlspecialchars($ticket['titre']) ?></h3>
-                        <h4><?= htmlspecialchars($ticket['auteur']) ?></h4>
-                        <h5><?= $ticket['date_creation_cplt'] ?></h5>
+                        <div class="authordate">
+                        	<h4><?= htmlspecialchars($ticket['auteur']) ?></h4>
+                        	<h5><?= $ticket['date_creation_cplt'] ?></h5>	
+                        </div>
+                        
 				    </a>
                     <?php 
                     endforeach;

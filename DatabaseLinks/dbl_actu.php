@@ -3,7 +3,7 @@
 
     function getAllArticles () {
         global $db;
-        $q = $db->prepare("SELECT * FROM Article");
+        $q = $db->prepare("SELECT * FROM Article ORDER BY Date DESC");
         $q->execute([]);
         $res = [];
         require_once "Classes/Entities/article.php";

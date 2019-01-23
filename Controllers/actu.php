@@ -10,7 +10,7 @@ class ActuController {
 
     public function actu ($id) {
         $actu = geActuById($id);
-        $view = new Template("Article:" . $actu->getPath());
+        $view = new Template("Article:" . $actu->getPath(), array("actu" => $actu));
         return $view->showTime();
     }
 

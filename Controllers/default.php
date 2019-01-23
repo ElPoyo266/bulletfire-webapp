@@ -24,9 +24,7 @@
 			//Est-ce que tous les champs sont remplis ?
 			if (isset($_POST['nickname']) and
 				isset($_POST['pwd']) and
-				isset($_POST['mail']) and
-				isset($_POST['surname']) and
-				isset($_POST['name']))
+				isset($_POST['mail']))
 			{
 				/*//Est-ce que le mot de passe et l'e-mail sont confirmés ?
 				if ((($_POST['pwd']) === ($_POST['pwd1'])) and
@@ -35,7 +33,7 @@
 					$hash = hash('sha256', $_POST["pwd"]);
 					
 					//Appel de la fonction pour insérer un nouveau joueur dans la table Joueur
-					insertNewPlayer ($_POST['nickname'], $_POST['surname'], $_POST['name'], $_POST['mail'], $hash);
+					insertNewPlayer ($_POST['nickname'], "", "", $_POST['mail'], $hash);
 					if (isset($error)) {
 						echo '<p>'.$error.'<p>';
 					}
@@ -68,7 +66,7 @@
 	public function ticketCreation($idCat){
 	//Ajout d'un ticket (Billet)
 		$taberror = array();
-		$player = $_SESSION["Player"];
+		$player = isset($_SESSION["Player"]) ? $_SESSION["Player"] : null;
 		if ($player!=null and isset($_POST['titre']) and isset($_POST['contenu']))
 		{
 			$nomPlayer = $player->getNickname();

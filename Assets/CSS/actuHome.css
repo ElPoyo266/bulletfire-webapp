@@ -25,8 +25,15 @@ main > a h4 {
 	margin : 0;
 }
 
-main > a > div {
+.left {
 	display: flex;
+	align-items: center;
+	width : 50%;
+}
+.right {
+	width : 50%;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
