@@ -20,7 +20,7 @@
 					<span>
 						<img src="<?= ASSET . 'Pics/bulletfiretxt.png' ?>" class="titleimg">
 						<div>
-							<a href="http://51.254.95.174/Assets/Uploads/LauncherApp/bulletfirelaunchersetup.exe" download class="win">
+							<a href="http://admin.bulletfire.fr/Assets/Uploads/LauncherApp/bulletfirelaunchersetup.exe" download class="win">
 								<img src="<?= ASSET . 'Pics/windowsplat.png' ?>">
 								<strong>Download Launcher for windows</strong>
 							</a>
