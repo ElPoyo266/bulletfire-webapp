@@ -24,13 +24,13 @@
 								<img src="<?= ASSET . 'Pics/windowsplat.png' ?>">
 								<strong>Download Launcher for windows</strong>
 							</a>
-
+							<!--
 							<a href="#" class="mac">
 								<img src="<?= ASSET . 'Pics/macplat.png' ?>">
 								<strong>Download Launcher for mac</strong>
 							</a>
-
-							<a href="#" class="lin">
+							-->
+							<a href="http://admin.bulletfire.fr/Assets/Uploads/LauncherApp/bulletfirelaunchersetup.deb" download class="lin">
 								<img src="<?= ASSET . 'Pics/linuxplat.png' ?>">
 								<strong>Download Launcher for linux</strong>
 							</a>
