@@ -24,6 +24,3 @@ require "_config/connectdb.php";
 // End
 
 $routes->submit();
-
-
-git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch Assets/Pics/demande_convention.pdf' --prune-empty --tag-name-filter cat -- --all
